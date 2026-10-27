@@ -276,9 +276,9 @@
     "semantic_hash": ""
   },
   "src/app/layout.tsx": {
-    "mtime": 1793076396.6439085,
-    "seen": 1793077137.842533,
-    "ast_hash": "ba711a45d934031eb465117955652dee",
+    "mtime": 1793077586.7136478,
+    "seen": 1793077889.7705371,
+    "ast_hash": "1ff968fdb138c55358cd3c148d2e92c6",
     "semantic_hash": ""
   },
   "src/app/mission-vision/page.tsx": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
-    "mtime": 1793076270.784844,
-    "seen": 1793077137.842533,
-    "ast_hash": "316ef92b45c24f8ef597733fa2386d66",
+    "mtime": 1793077678.4236853,
+    "seen": 1793077889.7705371,
+    "ast_hash": "e014d4b13278c358f20ef21c9b53f7b5",
     "semantic_hash": ""
   },
   "src/app/privacy/page.tsx": {
@@ -354,9 +354,9 @@
     "semantic_hash": ""
   },
   "src/components/Header.tsx": {
-    "mtime": 1793076244.8902562,
-    "seen": 1793077137.842533,
-    "ast_hash": "0d691bbee88babb3727c73640f9a37c9",
+    "mtime": 1793077634.760421,
+    "seen": 1793077889.7705371,
+    "ast_hash": "0f68bb1261d881114f87f8cab81d94be",
     "semantic_hash": ""
   },
   "src/components/JobApplyForm.tsx": {
@@ -888,9 +888,9 @@
     "semantic_hash": ""
   },
   "src/components/ads/AdsNavbar.tsx": {
-    "mtime": 1793014101.791865,
-    "seen": 1793014793.026913,
-    "ast_hash": "ef4bdf265808d1d0435b6b3d0f6c3342",
+    "mtime": 1793077644.3863757,
+    "seen": 1793077889.7705371,
+    "ast_hash": "d0cf6faadf21020239da76fc1ba6ad5f",
     "semantic_hash": ""
   },
   "src/components/ads/AdsQuoteConfigurator.tsx": {
@@ -957,6 +957,12 @@
     "mtime": 1793013840.9439178,
     "seen": 1793014793.026913,
     "ast_hash": "36e666b78f9030b4ef3f13291f2435b4",
+    "semantic_hash": ""
+  },
+  "src/components/MobileAppDock.tsx": {
+    "mtime": 1793077571.290646,
+    "seen": 1793077889.7705371,
+    "ast_hash": "c724dcdf4b58c3739c572150e275463b",
     "semantic_hash": ""
   }
 }
