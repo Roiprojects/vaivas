@@ -29,45 +29,88 @@ export default async function JobsPage() {
 
   return (
     <PublicLayout>
-      {/* Hero Banner */}
-      <section className="bg-gradient-to-b from-blue-50/60 via-white to-white py-14 lg:py-16 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-            <div className="max-w-2xl space-y-4">
-              <div className="relative h-9 w-36">
-                <Image
-                  src="/images/logos/vaivas-jobs-logo.png"
-                  alt="Vaivas Jobs"
-                  fill
-                  className="object-contain object-left"
-                />
+      {/* 1. VISUAL HERO BANNER - High-Contrast, Image-Rich, Concise */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-900 via-blue-950 to-slate-900 text-white py-12 sm:py-16 lg:py-20">
+        {/* Subtle mesh background grid */}
+        <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:20px_20px]"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Content - Punchy & Minimal */}
+            <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold tracking-wide uppercase shadow-sm">
+                <Briefcase className="w-3.5 h-3.5 text-blue-400" />
+                <span>Pan-India Career Ecosystem</span>
               </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.12]">
                 Jobs for today. <br />
-                <span className="text-blue-600">Growth for tomorrow.</span>
+                <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-amber-300 bg-clip-text text-transparent">
+                  Growth for tomorrow.
+                </span>
               </h1>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                Browse hand-picked professional career opportunities. Connect with progressive
-                enterprises and take the next leap in your professional journey.
+
+              <p className="text-base sm:text-lg text-slate-300 font-light max-w-xl mx-auto lg:mx-0">
+                Explore hand-picked professional roles with top enterprises and startups. Direct recruiter scheduling with transparent outcomes.
               </p>
+
+              {/* Fast Trust Chips */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 text-xs text-slate-300 font-medium">
+                <div className="flex items-center gap-1.5 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full backdrop-blur-xs">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>100% Free for Candidates</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full backdrop-blur-xs">
+                  <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                  <span>Verified Employers</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-white/5 border border-white/10 px-3 py-1.5 rounded-full backdrop-blur-xs">
+                  <CheckCircle2 className="w-4 h-4 text-amber-400 shrink-0" />
+                  <span>Direct HR Scheduling</span>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm max-w-sm space-y-3">
-              <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                <span>Verified Direct Openings</span>
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
-                All roles listed here are actively managed by Vaivas Ventures and our accredited
-                client partners with transparent feedback cycles.
-              </p>
+            {/* Right Visual Image Showcase with Floating Glass Badges */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative mx-auto max-w-md lg:max-w-none">
+                <div className="relative rounded-3xl overflow-hidden aspect-4/3 border-2 border-white/20 shadow-2xl">
+                  <Image
+                    src="/images/pillar-jobs.jpg"
+                    alt="Professionals in modern careers"
+                    fill
+                    priority
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                  
+                  {/* Bottom Image Overlay Tag */}
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs">
+                    <span className="font-semibold text-white/90">Curated Corporate Openings</span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/90 text-white font-bold text-[10px]">
+                      Live Hiring
+                    </span>
+                  </div>
+                </div>
+
+                {/* Floating Metric Pill */}
+                <div className="absolute -bottom-3 -left-3 sm:-bottom-4 sm:-left-4 glass-panel-dark text-white rounded-2xl p-3 shadow-xl flex items-center gap-2.5 border border-white/15">
+                  <div className="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shadow-md">
+                    <Briefcase className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-white">Active Positions</div>
+                    <div className="text-[11px] text-blue-300">Bengaluru &amp; Pan-India</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Searchable Listing Component */}
-      <section className="section-spacing bg-pale-blue">
+      {/* 2. SEARCHABLE JOB LISTINGS */}
+      <section className="section-spacing bg-slate-50/70 border-b border-slate-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <JobsSearchList initialJobs={jobs} />
         </div>

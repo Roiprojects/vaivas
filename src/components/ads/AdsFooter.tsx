@@ -44,14 +44,15 @@ export function AdsFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="relative h-12 w-48">
-              <Image
-                src="/images/logos/vaivas-ads-tight.png"
-                alt="Vaivas Ads"
-                fill
-                className="object-contain object-left brightness-0 invert"
-              />
-            </div>
+            <Link href="/ads" className="inline-flex items-center group">
+              <div className="inline-flex items-center px-3.5 py-2 bg-white rounded-2xl shadow-sm transition-transform group-hover:scale-[1.02]">
+                <img
+                  src="/images/logos/vaivas-ads-logo.png"
+                  alt="Vaivas Ads"
+                  className="h-9 sm:h-10 w-auto max-w-[220px] object-contain"
+                />
+              </div>
+            </Link>
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               Advertising, branding, and print production built around your business. A core strategic division of{" "}
               <Link href="/" className="text-blue-400 hover:underline">

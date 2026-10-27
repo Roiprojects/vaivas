@@ -10,13 +10,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-14 border-b border-slate-800/80">
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-2 space-y-5">
-            <Link href="/" className="inline-block">
-              <div className="relative h-12 w-52 bg-white/90 rounded-xl p-1.5 backdrop-blur-xs">
-                <Image
+            <Link href="/" className="inline-flex items-center group">
+              <div className="inline-flex items-center px-3.5 py-2 bg-white rounded-2xl shadow-sm transition-transform group-hover:scale-[1.02]">
+                <img
                   src="/images/logos/vaivas-ventures-logo.png"
                   alt="Vaivas Ventures — Your success, our mission"
-                  fill
-                  className="object-contain"
+                  className="h-9 sm:h-10 w-auto max-w-[220px] object-contain"
                 />
               </div>
             </Link>

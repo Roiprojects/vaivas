@@ -33,52 +33,34 @@ export default function Header() {
   let currentLogo = "/images/logos/vaivas-ventures-logo.png";
   let logoAlt = "Vaivas Ventures — Your success, our mission";
   let logoLink = "/";
-  let brandPill = "Ventures";
-  let brandPillColor = "bg-slate-100 text-slate-700 border-slate-200";
-
   if (isJobs) {
     currentLogo = "/images/logos/vaivas-jobs-logo.png";
     logoAlt = "Vaivas Jobs — Connecting Opportunities";
     logoLink = "/jobs";
-    brandPill = "Jobs";
-    brandPillColor = "bg-blue-50 text-blue-700 border-blue-200";
   } else if (isAds) {
     currentLogo = "/images/logos/vaivas-ads-logo.png";
     logoAlt = "Vaivas Ads — Big ideas. Real impact.";
     logoLink = "/ads";
-    brandPill = "Ads";
-    brandPillColor = "bg-orange-50 text-orange-700 border-orange-200";
   }
 
   return (
     <header
       className={`sticky top-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.06)] border-b border-slate-200/80 py-2.5 sm:py-3"
-          : "bg-white/80 backdrop-blur-md border-b border-slate-200/50 py-3 sm:py-4"
+          ? "bg-white/95 backdrop-blur-xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.06)] border-b border-slate-200/80 py-2 sm:py-2.5"
+          : "bg-white/90 backdrop-blur-md border-b border-slate-200/60 py-2.5 sm:py-3.5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Brand Logo with Dynamic Switching for Jobs and Ads */}
-          <div className="flex items-center gap-2.5">
-            <Link href={logoLink} className="flex items-center group">
-              <div className="relative h-11 w-44 sm:h-14 sm:w-56 transition-transform group-hover:scale-[1.02]">
-                <Image
-                  src={currentLogo}
-                  alt={logoAlt}
-                  fill
-                  priority
-                  className="object-contain object-left"
-                />
-              </div>
-            </Link>
-            <span
-              className={`hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold tracking-wide border shadow-2xs ${brandPillColor}`}
-            >
-              {brandPill}
-            </span>
-          </div>
+          <Link href={logoLink} className="flex items-center group shrink-0">
+            <img
+              src={currentLogo}
+              alt={logoAlt}
+              className="h-11 sm:h-12 md:h-14 w-auto max-w-[230px] sm:max-w-[270px] object-contain transition-transform group-hover:scale-[1.02]"
+            />
+          </Link>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">

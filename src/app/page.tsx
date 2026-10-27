@@ -211,13 +211,13 @@ export default async function HomePage() {
             <div className="group rounded-3xl bg-gradient-to-b from-blue-50/50 to-white border border-blue-100 hover-card-elevate overflow-hidden flex flex-col justify-between">
               <div className="p-6 sm:p-7 space-y-5">
                 <div className="flex items-center justify-between">
-                  <div className="relative h-9 w-36">
-                    <Image
-                      src="/images/logos/vaivas-jobs-logo.png"
-                      alt="Vaivas Jobs"
-                      fill
-                      className="object-contain object-left"
-                    />
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-9 h-9 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold">
+                      <Briefcase className="w-5 h-5" />
+                    </div>
+                    <span className="text-base font-extrabold text-slate-900 tracking-tight">
+                      Vaivas Jobs
+                    </span>
                   </div>
                   <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-blue-100 text-blue-700">
                     Careers
@@ -275,13 +275,13 @@ export default async function HomePage() {
             <div className="group rounded-3xl bg-gradient-to-b from-orange-50/50 to-white border border-orange-100 hover-card-elevate overflow-hidden flex flex-col justify-between">
               <div className="p-6 sm:p-7 space-y-5">
                 <div className="flex items-center justify-between">
-                  <div className="relative h-9 w-36">
-                    <Image
-                      src="/images/logos/vaivas-ads-logo.png"
-                      alt="Vaivas Ads"
-                      fill
-                      className="object-contain object-left"
-                    />
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-9 h-9 rounded-xl bg-orange-100 text-orange-700 flex items-center justify-center font-bold">
+                      <Sparkles className="w-5 h-5" />
+                    </div>
+                    <span className="text-base font-extrabold text-slate-900 tracking-tight">
+                      Vaivas Ads
+                    </span>
                   </div>
                   <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-orange-100 text-orange-700">
                     Studio &amp; Print
