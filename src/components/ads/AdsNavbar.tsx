@@ -10,7 +10,7 @@ export function AdsNavbar() {
   const pathname = usePathname();
 
   const navLinks = [
-    { label: "Ads Home", href: "/ads" },
+    { label: "Overview", href: "/ads" },
     { label: "About", href: "/ads/about" },
     { label: "Services", href: "/ads/services" },
     { label: "Our Work", href: "/ads/portfolio" },
@@ -26,20 +26,12 @@ export function AdsNavbar() {
 
   return (
     <>
-      {/* 1. TOP NETWORK BAR */}
+      {/* 1. Top Information Bar (Clean & uncluttered) */}
       <div className="bg-slate-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2 text-xs">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span className="text-slate-400 hidden xs:inline">A Strategic Vertical of <strong className="text-white">Vaivas Ventures</strong></span>
-            <span className="text-slate-700 hidden sm:inline">•</span>
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1.5 text-orange-400 hover:text-orange-300 font-bold transition-colors hover:underline"
-            >
-              <ArrowLeft className="w-3.5 h-3.5" />
-              <span>Back to Vaivas Ventures Main Site</span>
-            </Link>
+            <span className="text-slate-400">A Strategic Vertical of <strong className="text-white">Vaivas Ventures</strong></span>
           </div>
           <div className="flex items-center gap-4 text-[11px]">
             <a href="tel:+918041234568" className="hover:text-white hidden md:flex items-center gap-1 text-slate-400">
@@ -53,11 +45,11 @@ export function AdsNavbar() {
         </div>
       </div>
 
-      {/* 2. MAIN ADS HEADER */}
+      {/* 2. Main Navigation Header */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo + Quick Breadcrumb */}
+            {/* Logo + SINGLE Clean "Vaivas Home" Return Pill */}
             <div className="flex items-center gap-3 shrink-0">
               <Link href="/ads" className="flex items-center group">
                 <img
@@ -66,9 +58,11 @@ export function AdsNavbar() {
                   className="h-10 sm:h-12 md:h-14 w-auto max-w-[190px] sm:max-w-[240px] object-contain transition-transform group-hover:scale-[1.02]"
                 />
               </Link>
+
+              {/* The ONLY return button needed: clean, elegant, always visible */}
               <Link
                 href="/"
-                className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 text-xs font-bold text-slate-800 transition-all shadow-2xs group"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200/90 border border-slate-200 text-xs font-bold text-slate-800 transition-colors shadow-2xs group"
                 title="Return to Vaivas Ventures main corporate portal"
               >
                 <ArrowLeft className="w-3.5 h-3.5 text-orange-600 group-hover:-translate-x-0.5 transition-transform" />
@@ -76,18 +70,8 @@ export function AdsNavbar() {
               </Link>
             </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
-              {/* Distinct Back to Main Site button in navbar */}
-              <Link
-                href="/"
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs xl:text-sm font-bold text-orange-600 hover:text-orange-700 bg-orange-50 hover:bg-orange-100/70 border border-orange-200/80 transition-colors mr-1"
-                title="Return to Vaivas Ventures corporate portal"
-              >
-                <ArrowLeft className="w-3.5 h-3.5" />
-                <span>Vaivas Main Site</span>
-              </Link>
-
+            {/* Desktop Navigation (Clean & Uncrowded) */}
+            <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -103,7 +87,7 @@ export function AdsNavbar() {
               ))}
             </nav>
 
-            {/* Desktop CTAs */}
+            {/* Desktop CTA */}
             <div className="hidden sm:flex items-center gap-2.5">
               <Link
                 href="/ads/quote"
@@ -141,7 +125,7 @@ export function AdsNavbar() {
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3 shadow-xl animate-in slide-in-from-top-2 duration-150">
-            {/* Prominent Back to Vaivas Ventures Card */}
+            {/* Mobile Return Card */}
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
@@ -189,23 +173,6 @@ export function AdsNavbar() {
           </div>
         )}
       </header>
-
-      {/* 3. FLOATING QUICK-RETURN BUTTON (Always Available As You Scroll) */}
-      <div className="fixed bottom-6 left-6 z-40">
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-slate-950/95 hover:bg-slate-900 text-white font-bold text-xs shadow-2xl backdrop-blur-md border border-white/15 hover:border-orange-500/50 hover:shadow-orange-500/20 active:scale-95 transition-all group"
-          title="Return to Vaivas Ventures Main Site"
-        >
-          <div className="w-6 h-6 rounded-full bg-white/15 flex items-center justify-center group-hover:-translate-x-0.5 transition-transform">
-            <ArrowLeft className="w-3.5 h-3.5 text-orange-400" />
-          </div>
-          <div className="flex flex-col text-left">
-            <span className="text-[10px] text-slate-400 font-normal leading-tight">Back to</span>
-            <span className="font-bold text-white leading-tight">Vaivas Ventures Home</span>
-          </div>
-        </Link>
-      </div>
     </>
   );
 }
