@@ -276,9 +276,9 @@
     "semantic_hash": ""
   },
   "src/app/layout.tsx": {
-    "mtime": 1793077586.7136478,
-    "seen": 1793077889.7705371,
-    "ast_hash": "1ff968fdb138c55358cd3c148d2e92c6",
+    "mtime": 1793079698.9084158,
+    "seen": 1793080089.4930677,
+    "ast_hash": "7de5b62c689e364e7ad8cf9667cc59db",
     "semantic_hash": ""
   },
   "src/app/mission-vision/page.tsx": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
-    "mtime": 1793078346.026534,
-    "seen": 1793078705.0042899,
-    "ast_hash": "d6f5727b5dad78308e5148662229c6dd",
+    "mtime": 1793080869.4899046,
+    "seen": 1793081000.7416263,
+    "ast_hash": "c367d42451ea013069556d1125da9ac8",
     "semantic_hash": ""
   },
   "src/app/privacy/page.tsx": {
@@ -354,9 +354,9 @@
     "semantic_hash": ""
   },
   "src/components/Header.tsx": {
-    "mtime": 1793078313.6235602,
-    "seen": 1793078705.0042899,
-    "ast_hash": "a719f7858d457b774b83693f911b3336",
+    "mtime": 1793080857.1941934,
+    "seen": 1793081000.7416263,
+    "ast_hash": "fbf5b952f58ba5c5bbabae98f0a37b31",
     "semantic_hash": ""
   },
   "src/components/JobApplyForm.tsx": {
@@ -552,27 +552,27 @@
     "semantic_hash": ""
   },
   "public/images/gallery-1.jpg": {
-    "mtime": 1792992638.2221615,
-    "seen": 1793013352.7547164,
-    "ast_hash": "4a278a1647adff33fdd5ca56621f3209",
+    "mtime": 1793078922.616288,
+    "seen": 1793080089.4930677,
+    "ast_hash": "375165effbd0cbb7f6269ffc63835400",
     "semantic_hash": ""
   },
   "public/images/gallery-2.jpg": {
-    "mtime": 1792992638.2300088,
-    "seen": 1793013352.7547164,
-    "ast_hash": "a3bd0cb6ebd5bc5f8a8c47866266c98d",
+    "mtime": 1793078882.9969559,
+    "seen": 1793080089.4930677,
+    "ast_hash": "c669ec295e7c3a5585feb0e950fee308",
     "semantic_hash": ""
   },
   "public/images/gallery-3.jpg": {
-    "mtime": 1792992638.2396774,
-    "seen": 1793013352.7547164,
-    "ast_hash": "2f067b36586cc5445f1441b100f220ff",
+    "mtime": 1793078865.229101,
+    "seen": 1793080089.4930677,
+    "ast_hash": "54285d3de9059d1809e72f2fd5e2d111",
     "semantic_hash": ""
   },
   "public/images/hero-team.jpg": {
-    "mtime": 1792992638.1786437,
-    "seen": 1793013352.7547164,
-    "ast_hash": "a7070cee23da2acd184afcc1738890c7",
+    "mtime": 1793078865.229101,
+    "seen": 1793080089.4930677,
+    "ast_hash": "54285d3de9059d1809e72f2fd5e2d111",
     "semantic_hash": ""
   },
   "public/images/logos/ads-mockup.png": {
@@ -606,21 +606,21 @@
     "semantic_hash": ""
   },
   "public/images/pillar-ads.jpg": {
-    "mtime": 1792992638.2074876,
-    "seen": 1793013352.7547164,
-    "ast_hash": "ad7afc5153f91958a547943eb728b3a2",
+    "mtime": 1793078904.8755436,
+    "seen": 1793080089.4930677,
+    "ast_hash": "7ed5ba486b73b2e84b1bc01077e4da6e",
     "semantic_hash": ""
   },
   "public/images/pillar-hr.jpg": {
-    "mtime": 1792992638.212806,
-    "seen": 1793013352.7547164,
-    "ast_hash": "242f8db1b67315d5d7130fdedfc4218d",
+    "mtime": 1793078922.616288,
+    "seen": 1793080089.4930677,
+    "ast_hash": "375165effbd0cbb7f6269ffc63835400",
     "semantic_hash": ""
   },
   "public/images/pillar-jobs.jpg": {
-    "mtime": 1792992638.2007124,
-    "seen": 1793013352.7547164,
-    "ast_hash": "6b4b574aa29ec5331533ab36c3d0be7f",
+    "mtime": 1793078882.9969559,
+    "seen": 1793080089.4930677,
+    "ast_hash": "c669ec295e7c3a5585feb0e950fee308",
     "semantic_hash": ""
   },
   "public/next.svg": {
@@ -900,9 +900,9 @@
     "semantic_hash": ""
   },
   "public/images/ads/ads-hero.jpg": {
-    "mtime": 1793013865.4925697,
-    "seen": 1793014793.026913,
-    "ast_hash": "4de77b4bda40183e50d47de247b8fa8d",
+    "mtime": 1793078904.8755436,
+    "seen": 1793080089.4930677,
+    "ast_hash": "7ed5ba486b73b2e84b1bc01077e4da6e",
     "semantic_hash": ""
   },
   "public/images/ads/blog-1.jpg": {
@@ -924,21 +924,21 @@
     "semantic_hash": ""
   },
   "public/images/ads/print-calendar-showcase.jpg": {
-    "mtime": 1793013865.5111055,
-    "seen": 1793014793.026913,
-    "ast_hash": "537de5a0683b07dd69a4e1b7e85dadfa",
+    "mtime": 1793079559.4466777,
+    "seen": 1793080089.4930677,
+    "ast_hash": "dc96c54d5cd5d8d792e42a097cedfde4",
     "semantic_hash": ""
   },
   "public/images/ads/project-1.jpg": {
-    "mtime": 1793013865.4925697,
-    "seen": 1793014793.026913,
-    "ast_hash": "dae11f81f37ac09c207cd65d590d68d8",
+    "mtime": 1793079537.5797243,
+    "seen": 1793080089.4930677,
+    "ast_hash": "a06be8c97f1162e2194d9a1776853da9",
     "semantic_hash": ""
   },
   "public/images/ads/project-2.jpg": {
-    "mtime": 1793013865.5026698,
-    "seen": 1793014793.026913,
-    "ast_hash": "9c849527301c44889fac798009e3122a",
+    "mtime": 1793079582.9535427,
+    "seen": 1793080089.4930677,
+    "ast_hash": "97a9f1ef447a4a6425b06ae6b48ffd17",
     "semantic_hash": ""
   },
   "public/images/ads/project-3.jpg": {
@@ -981,6 +981,12 @@
     "mtime": 1793078114.67744,
     "seen": 1793078705.0042899,
     "ast_hash": "d22fcaa262f62af4c9e2e0846a335e88",
+    "semantic_hash": ""
+  },
+  "src/components/LightThemeSwitcher.tsx": {
+    "mtime": 1793079645.2406354,
+    "seen": 1793080089.4930677,
+    "ast_hash": "118a3fb5e4cecc945b00fc0ec6252729",
     "semantic_hash": ""
   }
 }

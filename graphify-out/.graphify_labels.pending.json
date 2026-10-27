@@ -16,7 +16,7 @@
   "14": "next",
   "15": "README.md",
   "16": "admin/blogs/page.tsx",
-  "17": "app/layout.tsx",
+  "17": "admin/hr-recruitment/page.tsx",
   "18": "postcss.config.mjs",
   "19": "billing/page.tsx",
   "20": "dispatch/page.tsx",
@@ -25,6 +25,7 @@
   "23": "quotations/page.tsx",
   "24": "admin/ads/services/page.tsx",
   "25": "ads/settings/page.tsx",
+  "26": "billing/route.ts",
   "27": "scripts",
   "28": "eslint.config.mjs",
   "29": "admin/gallery/page.tsx",
@@ -32,8 +33,9 @@
   "31": "admin/settings/page.tsx",
   "32": "admin/testimonials/page.tsx",
   "33": "dispatch/route.ts",
-  "34": "admin/jobs/page.tsx",
+  "34": "next",
   "35": "tailwindcss",
   "36": "admin/about/page.tsx",
-  "41": "leads/route.ts"
+  "37": "services/route.ts",
+  "38": "settings/route.ts"
 }
