@@ -2,18 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+:root,
+[data-theme="sapphire"] {
   --background: #ffffff;
   --foreground: #091a36;
-  --brand-navy: #091a36;
-  --brand-blue: #1d4ed8;
-  --brand-indigo: #4338ca;
-  --brand-orange: #ea580c;
-  --brand-orange-hover: #c2410c;
-  --brand-green: #16a34a;
-  --brand-light-blue: #f0f7ff;
-  --brand-slate: #475569;
-  --brand-border: #e2e8f0;
+  --theme-primary: #1d4ed8;
+  --theme-primary-hover: #1e40af;
+  --theme-primary-light: #eff6ff;
+  --theme-accent: #ea580c;
+  --theme-accent-hover: #c2410c;
+  --theme-accent-light: #fff7ed;
+  --theme-badge-bg: #eff6ff;
+  --theme-badge-text: #1d4ed8;
+  --theme-badge-border: #bfdbfe;
+  --theme-mesh-1: rgba(29, 78, 216, 0.08);
+  --theme-mesh-2: rgba(234, 88, 12, 0.07);
+}
+
+[data-theme="navy-gold"] {
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  --theme-primary: #0f172a;
+  --theme-primary-hover: #1e293b;
+  --theme-primary-light: #f8fafc;
+  --theme-accent: #d97706;
+  --theme-accent-hover: #b45309;
+  --theme-accent-light: #fffbeb;
+  --theme-badge-bg: #fef3c7;
+  --theme-badge-text: #92400e;
+  --theme-badge-border: #fde68a;
+  --theme-mesh-1: rgba(15, 23, 42, 0.07);
+  --theme-mesh-2: rgba(217, 119, 6, 0.08);
+}
+
+[data-theme="emerald-indigo"] {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --theme-primary: #4338ca;
+  --theme-primary-hover: #3730a3;
+  --theme-primary-light: #eef2ff;
+  --theme-accent: #059669;
+  --theme-accent-hover: #047857;
+  --theme-accent-light: #ecfdf5;
+  --theme-badge-bg: #ecfdf5;
+  --theme-badge-text: #065f46;
+  --theme-badge-border: #a7f3d0;
+  --theme-mesh-1: rgba(67, 56, 202, 0.08);
+  --theme-mesh-2: rgba(5, 150, 105, 0.07);
+}
+
+[data-theme="amethyst-sunset"] {
+  --background: #ffffff;
+  --foreground: #1e1b4b;
+  --theme-primary: #6d28d9;
+  --theme-primary-hover: #5b21b6;
+  --theme-primary-light: #f5f3ff;
+  --theme-accent: #f97316;
+  --theme-accent-hover: #ea580c;
+  --theme-accent-light: #fff7ed;
+  --theme-badge-bg: #f5f3ff;
+  --theme-badge-text: #6d28d9;
+  --theme-badge-border: #ddd6fe;
+  --theme-mesh-1: rgba(109, 40, 217, 0.08);
+  --theme-mesh-2: rgba(249, 115, 22, 0.07);
 }
 
 body {
@@ -23,6 +74,40 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dynamic Theme Utilities */
+.theme-primary-text {
+  color: var(--theme-primary) !important;
+}
+
+.theme-primary-bg {
+  background-color: var(--theme-primary) !important;
+}
+
+.theme-accent-text {
+  color: var(--theme-accent) !important;
+}
+
+.theme-accent-bg {
+  background-color: var(--theme-accent) !important;
+}
+
+.theme-badge {
+  background-color: var(--theme-badge-bg) !important;
+  color: var(--theme-badge-text) !important;
+  border-color: var(--theme-badge-border) !important;
+}
+
+.theme-cta-btn {
+  background: linear-gradient(135deg, var(--theme-accent) 0%, var(--theme-accent-hover) 100%) !important;
+  color: #ffffff !important;
+}
+
+.theme-primary-btn {
+  background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-primary-hover) 100%) !important;
+  color: #ffffff !important;
 }
 
 /* Custom Utilities */

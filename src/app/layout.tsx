@@ -38,6 +38,7 @@ export const metadata: Metadata = {
 };
 
 import MobileAppDock from "@/components/MobileAppDock";
+import LightThemeSwitcher from "@/components/LightThemeSwitcher";
 
 export default function RootLayout({
   children,
@@ -45,8 +46,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full scroll-smooth">
+    <html lang="en" className="h-full scroll-smooth" data-theme="sapphire">
       <body className="min-h-full flex flex-col antialiased selection:bg-blue-600 selection:text-white">
+        <LightThemeSwitcher />
         <div className="flex-1 pb-20 lg:pb-0">{children}</div>
         <MobileAppDock />
       </body>

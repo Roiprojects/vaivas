@@ -1,7 +1,7 @@
 # Graph Report - vaivas  (2026-10-27)
 
 ## Corpus Check
-- 122 files · ~743,534 words
+- 122 files · ~753,891 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 6 file(s) not represented in the graph (top: (none) 2, .example 1, .prisma 1)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d614b278`
+- Built from commit: `bb74f597`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

@@ -270,9 +270,9 @@
     "semantic_hash": ""
   },
   "src/app/jobs/page.tsx": {
-    "mtime": 1792993068.0406325,
-    "seen": 1793013352.7547164,
-    "ast_hash": "d15675d5df5df5a02f1b0a219ae6353a",
+    "mtime": 1793078355.9300954,
+    "seen": 1793078705.0042899,
+    "ast_hash": "a1144eb516f9323e69b75f68df31bce3",
     "semantic_hash": ""
   },
   "src/app/layout.tsx": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
-    "mtime": 1793077678.4236853,
-    "seen": 1793077889.7705371,
-    "ast_hash": "e014d4b13278c358f20ef21c9b53f7b5",
+    "mtime": 1793078346.026534,
+    "seen": 1793078705.0042899,
+    "ast_hash": "d6f5727b5dad78308e5148662229c6dd",
     "semantic_hash": ""
   },
   "src/app/privacy/page.tsx": {
@@ -342,9 +342,9 @@
     "semantic_hash": ""
   },
   "src/components/Footer.tsx": {
-    "mtime": 1792992812.621531,
-    "seen": 1793013352.7547164,
-    "ast_hash": "4521678249c3ede780a4758137112d3f",
+    "mtime": 1793078326.8410304,
+    "seen": 1793078705.0042899,
+    "ast_hash": "1114a4ec8f408c11b2cb799d69695341",
     "semantic_hash": ""
   },
   "src/components/GalleryViewer.tsx": {
@@ -354,9 +354,9 @@
     "semantic_hash": ""
   },
   "src/components/Header.tsx": {
-    "mtime": 1793077634.760421,
-    "seen": 1793077889.7705371,
-    "ast_hash": "0f68bb1261d881114f87f8cab81d94be",
+    "mtime": 1793078313.6235602,
+    "seen": 1793078705.0042899,
+    "ast_hash": "a719f7858d457b774b83693f911b3336",
     "semantic_hash": ""
   },
   "src/components/JobApplyForm.tsx": {
@@ -588,21 +588,21 @@
     "semantic_hash": ""
   },
   "public/images/logos/vaivas-ads-logo.png": {
-    "mtime": 1792979178.4201248,
-    "seen": 1793013352.7547164,
-    "ast_hash": "ce1f8524b05d9a7fe3800b0a0f3416ce",
+    "mtime": 1793078114.4988182,
+    "seen": 1793078705.0042899,
+    "ast_hash": "f8179dd72476cbc81bfbea8d057591d1",
     "semantic_hash": ""
   },
   "public/images/logos/vaivas-jobs-logo.png": {
-    "mtime": 1792979188.6310387,
-    "seen": 1793013352.7547164,
-    "ast_hash": "393ac057d5fcd1be076ba2fa48f01733",
+    "mtime": 1793078114.3525758,
+    "seen": 1793078705.0042899,
+    "ast_hash": "d9cc95248d3d6dd82db7166ffb4b46b5",
     "semantic_hash": ""
   },
   "public/images/logos/vaivas-ventures-logo.png": {
-    "mtime": 1792979297.61278,
-    "seen": 1793013352.7547164,
-    "ast_hash": "70db97be2ba63ca4e90395b14fd54d00",
+    "mtime": 1793078114.67744,
+    "seen": 1793078705.0042899,
+    "ast_hash": "d22fcaa262f62af4c9e2e0846a335e88",
     "semantic_hash": ""
   },
   "public/images/pillar-ads.jpg": {
@@ -882,15 +882,15 @@
     "semantic_hash": ""
   },
   "src/components/ads/AdsFooter.tsx": {
-    "mtime": 1793014112.9002433,
-    "seen": 1793014793.026913,
-    "ast_hash": "790bc75d6f7b45f308833c78f4329e15",
+    "mtime": 1793078334.4692683,
+    "seen": 1793078705.0042899,
+    "ast_hash": "1fb2985db4153850670cdbfd93e574ff",
     "semantic_hash": ""
   },
   "src/components/ads/AdsNavbar.tsx": {
-    "mtime": 1793077644.3863757,
-    "seen": 1793077889.7705371,
-    "ast_hash": "d0cf6faadf21020239da76fc1ba6ad5f",
+    "mtime": 1793078319.5003712,
+    "seen": 1793078705.0042899,
+    "ast_hash": "155a5d143dd0597e9d16e43c51f3988b",
     "semantic_hash": ""
   },
   "src/components/ads/AdsQuoteConfigurator.tsx": {
@@ -963,6 +963,24 @@
     "mtime": 1793077571.290646,
     "seen": 1793077889.7705371,
     "ast_hash": "c724dcdf4b58c3739c572150e275463b",
+    "semantic_hash": ""
+  },
+  "public/images/logos/vaivas-ads-logo-tight.png": {
+    "mtime": 1793078114.4988182,
+    "seen": 1793078705.0042899,
+    "ast_hash": "f8179dd72476cbc81bfbea8d057591d1",
+    "semantic_hash": ""
+  },
+  "public/images/logos/vaivas-jobs-logo-tight.png": {
+    "mtime": 1793078114.3525758,
+    "seen": 1793078705.0042899,
+    "ast_hash": "d9cc95248d3d6dd82db7166ffb4b46b5",
+    "semantic_hash": ""
+  },
+  "public/images/logos/vaivas-ventures-logo-tight.png": {
+    "mtime": 1793078114.67744,
+    "seen": 1793078705.0042899,
+    "ast_hash": "d22fcaa262f62af4c9e2e0846a335e88",
     "semantic_hash": ""
   }
 }

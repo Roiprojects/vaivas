@@ -69,8 +69,8 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             {/* Left Column: Focused, Punchy Message */}
             <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/90 border border-blue-200/80 text-blue-700 text-xs font-semibold tracking-wide uppercase shadow-xs">
-                <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+              <div className="theme-badge inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase border shadow-2xs">
+                <Sparkles className="w-3.5 h-3.5" />
                 <span>{cms?.hero?.badge || "Ecosystem for Growth"}</span>
               </div>
 
@@ -88,7 +88,7 @@ export default async function HomePage() {
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
                 <Link
                   href="#our-businesses"
-                  className="shimmer-btn inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 shadow-[0_4px_16px_rgba(234,88,12,0.32)] hover:shadow-[0_6px_22px_rgba(234,88,12,0.42)] transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+                  className="shimmer-btn theme-cta-btn inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm sm:text-base font-semibold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0"
                 >
                   <span>Explore Businesses</span>
                   <ArrowRight className="w-4 h-4" />
@@ -96,7 +96,7 @@ export default async function HomePage() {
 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm sm:text-base font-semibold text-slate-700 hover:text-blue-600 bg-white hover:bg-slate-50 border border-slate-200/90 transition-all shadow-xs"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm sm:text-base font-semibold text-slate-700 hover:text-slate-950 bg-white hover:bg-slate-50 border border-slate-200/90 transition-all shadow-xs"
                 >
                   <PhoneCall className="w-4 h-4 text-slate-500" />
                   <span>Let&apos;s Connect</span>
