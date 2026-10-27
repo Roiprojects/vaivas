@@ -45,10 +45,10 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-300 ${
+      className={`sticky top-0 z-40 transition-all duration-300 theme-header border-b ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.06)] border-b border-slate-200/80 py-2 sm:py-2.5"
-          : "bg-white/90 backdrop-blur-md border-b border-slate-200/60 py-2.5 sm:py-3.5"
+          ? "py-2 sm:py-2.5 shadow-[0_10px_30px_-10px_rgba(0,0,0,0.06)]"
+          : "py-2.5 sm:py-3.5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,8 +68,8 @@ export default function Header() {
               href="/"
               className={`px-3.5 py-2 text-sm font-medium rounded-full transition-colors ${
                 pathname === "/"
-                  ? "text-blue-600 bg-blue-50/80 font-semibold"
-                  : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
+                  ? "theme-badge font-bold"
+                  : "text-slate-700 hover:text-slate-950 hover:bg-slate-100/60"
               }`}
             >
               Home
@@ -79,8 +79,8 @@ export default function Header() {
               href="/about"
               className={`px-3.5 py-2 text-sm font-medium rounded-full transition-colors ${
                 pathname === "/about"
-                  ? "text-blue-600 bg-blue-50/80 font-semibold"
-                  : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
+                  ? "theme-badge font-bold"
+                  : "text-slate-700 hover:text-slate-950 hover:bg-slate-100/60"
               }`}
             >
               About Us
@@ -96,8 +96,8 @@ export default function Header() {
                 type="button"
                 className={`px-3.5 py-2 text-sm font-medium rounded-full inline-flex items-center gap-1.5 transition-colors ${
                   isBusinessActive
-                    ? "text-blue-600 bg-blue-50/80 font-semibold"
-                    : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
+                    ? "theme-badge font-bold"
+                    : "text-slate-700 hover:text-slate-950 hover:bg-slate-100/60"
                 }`}
                 aria-expanded={businessDropdownOpen}
               >
@@ -170,8 +170,8 @@ export default function Header() {
               href="/gallery"
               className={`px-3.5 py-2 text-sm font-medium rounded-full transition-colors ${
                 pathname === "/gallery"
-                  ? "text-blue-600 bg-blue-50/80 font-semibold"
-                  : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
+                  ? "theme-badge font-bold"
+                  : "text-slate-700 hover:text-slate-950 hover:bg-slate-100/60"
               }`}
             >
               Gallery
@@ -181,8 +181,8 @@ export default function Header() {
               href="/blogs"
               className={`px-3.5 py-2 text-sm font-medium rounded-full transition-colors ${
                 pathname.startsWith("/blogs")
-                  ? "text-blue-600 bg-blue-50/80 font-semibold"
-                  : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
+                  ? "theme-badge font-bold"
+                  : "text-slate-700 hover:text-slate-950 hover:bg-slate-100/60"
               }`}
             >
               Blogs
@@ -192,8 +192,8 @@ export default function Header() {
               href="/contact"
               className={`px-3.5 py-2 text-sm font-medium rounded-full transition-colors ${
                 pathname === "/contact"
-                  ? "text-blue-600 bg-blue-50/80 font-semibold"
-                  : "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
+                  ? "theme-badge font-bold"
+                  : "text-slate-700 hover:text-slate-950 hover:bg-slate-100/60"
               }`}
             >
               Contact
@@ -204,7 +204,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-3">
             <Link
               href="/contact"
-              className="shimmer-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 shadow-[0_4px_14px_rgba(234,88,12,0.3)] hover:shadow-[0_6px_20px_rgba(234,88,12,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              className="shimmer-btn theme-cta-btn inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0"
             >
               <span>Let&apos;s Connect</span>
               <ArrowRight className="w-4 h-4" />
@@ -215,7 +215,7 @@ export default function Header() {
           <div className="lg:hidden flex items-center gap-2">
             <Link
               href="/contact"
-              className="px-3 py-1.5 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-orange-500 to-amber-500 shadow-sm active:scale-95 transition-transform"
+              className="theme-cta-btn px-3.5 py-1.5 rounded-full text-xs font-semibold shadow-sm active:scale-95 transition-transform"
             >
               Connect
             </Link>
@@ -325,7 +325,7 @@ export default function Header() {
           <div className="pt-2 flex flex-col gap-2">
             <Link
               href="/contact"
-              className="w-full text-center py-3 rounded-full text-sm font-bold text-white bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 shadow-md active:scale-95 transition-transform"
+              className="w-full text-center py-3 rounded-full text-sm font-bold theme-cta-btn shadow-md active:scale-95 transition-transform"
             >
               Get in Touch Directly
             </Link>

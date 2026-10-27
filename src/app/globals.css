@@ -2,82 +2,174 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========================================================================= */
+/* 4 CURATED SUPER-PREMIUM LIGHT THEMES (100% Theme-Driven System)           */
+/* ========================================================================= */
+
+/* Theme 1: Sapphire & Amber Gold (Silicon Valley Elite) */
 :root,
 [data-theme="sapphire"] {
-  --background: #ffffff;
-  --foreground: #091a36;
+  --theme-bg: #f8fafc;
+  --theme-surface: #ffffff;
+  --theme-surface-subtle: #f1f5f9;
+  --theme-border: rgba(226, 232, 240, 0.9);
+  --theme-border-hover: rgba(37, 99, 235, 0.4);
   --theme-primary: #1d4ed8;
   --theme-primary-hover: #1e40af;
-  --theme-primary-light: #eff6ff;
   --theme-accent: #ea580c;
   --theme-accent-hover: #c2410c;
-  --theme-accent-light: #fff7ed;
+  --theme-text-title: #091328;
+  --theme-text-muted: #475569;
   --theme-badge-bg: #eff6ff;
   --theme-badge-text: #1d4ed8;
   --theme-badge-border: #bfdbfe;
-  --theme-mesh-1: rgba(29, 78, 216, 0.08);
-  --theme-mesh-2: rgba(234, 88, 12, 0.07);
+  --theme-gradient-title: linear-gradient(135deg, #091328 0%, #1d4ed8 60%, #3b82f6 100%);
+  --theme-btn-gradient: linear-gradient(135deg, #ea580c 0%, #f97316 50%, #f59e0b 100%);
+  --theme-btn-primary: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);
+  --theme-glow-orb-1: rgba(37, 99, 235, 0.09);
+  --theme-glow-orb-2: rgba(234, 88, 12, 0.08);
+  --theme-glow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 12px 35px -8px rgba(37, 99, 235, 0.06);
+  --theme-glow-card-hover: 0 12px 35px -4px rgba(15, 23, 42, 0.08), 0 20px 45px -10px rgba(37, 99, 235, 0.12);
+  --theme-header-bg: rgba(255, 255, 255, 0.88);
+  --theme-header-border: rgba(226, 232, 240, 0.8);
 }
 
+/* Theme 2: Executive Navy & Champagne Gold (Mayfair Corporate Prestige) */
 [data-theme="navy-gold"] {
-  --background: #fafaf9;
-  --foreground: #1c1917;
+  --theme-bg: #fbf9f5;
+  --theme-surface: #ffffff;
+  --theme-surface-subtle: #f4efe6;
+  --theme-border: rgba(231, 222, 206, 0.85);
+  --theme-border-hover: rgba(217, 119, 6, 0.45);
   --theme-primary: #0f172a;
   --theme-primary-hover: #1e293b;
-  --theme-primary-light: #f8fafc;
   --theme-accent: #d97706;
   --theme-accent-hover: #b45309;
-  --theme-accent-light: #fffbeb;
+  --theme-text-title: #14110e;
+  --theme-text-muted: #575047;
   --theme-badge-bg: #fef3c7;
   --theme-badge-text: #92400e;
   --theme-badge-border: #fde68a;
-  --theme-mesh-1: rgba(15, 23, 42, 0.07);
-  --theme-mesh-2: rgba(217, 119, 6, 0.08);
+  --theme-gradient-title: linear-gradient(135deg, #14110e 0%, #3f3933 45%, #b45309 100%);
+  --theme-btn-gradient: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #fbbf24 100%);
+  --theme-btn-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+  --theme-glow-orb-1: rgba(217, 119, 6, 0.1);
+  --theme-glow-orb-2: rgba(15, 23, 42, 0.06);
+  --theme-glow-card: 0 4px 20px -2px rgba(28, 25, 23, 0.05), 0 12px 35px -8px rgba(217, 119, 6, 0.07);
+  --theme-glow-card-hover: 0 12px 35px -4px rgba(28, 25, 23, 0.09), 0 20px 45px -10px rgba(217, 119, 6, 0.14);
+  --theme-header-bg: rgba(251, 249, 245, 0.9);
+  --theme-header-border: rgba(231, 222, 206, 0.7);
 }
 
+/* Theme 3: Emerald Mint & Ultra Indigo (Future Ventures & Growth) */
 [data-theme="emerald-indigo"] {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  --theme-bg: #f6faf8;
+  --theme-surface: #ffffff;
+  --theme-surface-subtle: #edf5f0;
+  --theme-border: rgba(209, 231, 221, 0.85);
+  --theme-border-hover: rgba(5, 150, 105, 0.45);
   --theme-primary: #4338ca;
   --theme-primary-hover: #3730a3;
-  --theme-primary-light: #eef2ff;
   --theme-accent: #059669;
   --theme-accent-hover: #047857;
-  --theme-accent-light: #ecfdf5;
+  --theme-text-title: #0a1f18;
+  --theme-text-muted: #415951;
   --theme-badge-bg: #ecfdf5;
   --theme-badge-text: #065f46;
   --theme-badge-border: #a7f3d0;
-  --theme-mesh-1: rgba(67, 56, 202, 0.08);
-  --theme-mesh-2: rgba(5, 150, 105, 0.07);
+  --theme-gradient-title: linear-gradient(135deg, #0a1f18 0%, #4338ca 65%, #059669 100%);
+  --theme-btn-gradient: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+  --theme-btn-primary: linear-gradient(135deg, #4338ca 0%, #4f46e5 50%, #6366f1 100%);
+  --theme-glow-orb-1: rgba(5, 150, 105, 0.09);
+  --theme-glow-orb-2: rgba(67, 56, 202, 0.08);
+  --theme-glow-card: 0 4px 20px -2px rgba(6, 95, 70, 0.05), 0 12px 35px -8px rgba(5, 150, 105, 0.07);
+  --theme-glow-card-hover: 0 12px 35px -4px rgba(6, 95, 70, 0.09), 0 20px 45px -10px rgba(5, 150, 105, 0.14);
+  --theme-header-bg: rgba(246, 250, 248, 0.9);
+  --theme-header-border: rgba(209, 231, 221, 0.7);
 }
 
+/* Theme 4: Amethyst & Sunset Tangerine (Creative Studio Luxury) */
 [data-theme="amethyst-sunset"] {
-  --background: #ffffff;
-  --foreground: #1e1b4b;
+  --theme-bg: #faf7fd;
+  --theme-surface: #ffffff;
+  --theme-surface-subtle: #f2eaf9;
+  --theme-border: rgba(233, 219, 248, 0.85);
+  --theme-border-hover: rgba(124, 58, 237, 0.45);
   --theme-primary: #6d28d9;
   --theme-primary-hover: #5b21b6;
-  --theme-primary-light: #f5f3ff;
   --theme-accent: #f97316;
   --theme-accent-hover: #ea580c;
-  --theme-accent-light: #fff7ed;
+  --theme-text-title: #1a0f2e;
+  --theme-text-muted: #56476b;
   --theme-badge-bg: #f5f3ff;
   --theme-badge-text: #6d28d9;
   --theme-badge-border: #ddd6fe;
-  --theme-mesh-1: rgba(109, 40, 217, 0.08);
-  --theme-mesh-2: rgba(249, 115, 22, 0.07);
+  --theme-gradient-title: linear-gradient(135deg, #1a0f2e 0%, #6d28d9 60%, #f97316 100%);
+  --theme-btn-gradient: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #f59e0b 100%);
+  --theme-btn-primary: linear-gradient(135deg, #6d28d9 0%, #7c3aed 50%, #8b5cf6 100%);
+  --theme-glow-orb-1: rgba(124, 58, 237, 0.09);
+  --theme-glow-orb-2: rgba(249, 115, 22, 0.08);
+  --theme-glow-card: 0 4px 20px -2px rgba(76, 29, 149, 0.05), 0 12px 35px -8px rgba(124, 58, 237, 0.07);
+  --theme-glow-card-hover: 0 12px 35px -4px rgba(76, 29, 149, 0.09), 0 20px 45px -10px rgba(124, 58, 237, 0.14);
+  --theme-header-bg: rgba(250, 247, 253, 0.9);
+  --theme-header-border: rgba(233, 219, 248, 0.7);
 }
 
+/* ========================================================================= */
+/* BASE STYLES & LUXURY BEHAVIOR                                             */
+/* ========================================================================= */
+
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--theme-bg);
+  color: var(--theme-text-title);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease;
 }
 
-/* Dynamic Theme Utilities */
+/* ========================================================================= */
+/* DYNAMIC THEMED UTILITIES (Universal Across All Themes)                     */
+/* ========================================================================= */
+
+.theme-canvas {
+  background-color: var(--theme-bg) !important;
+  transition: background-color 0.4s ease;
+}
+
+.theme-surface {
+  background-color: var(--theme-surface) !important;
+  border-color: var(--theme-border) !important;
+  box-shadow: var(--theme-glow-card) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.theme-surface:hover {
+  border-color: var(--theme-border-hover) !important;
+  box-shadow: var(--theme-glow-card-hover) !important;
+  transform: translateY(-4px);
+}
+
+.theme-surface-subtle {
+  background-color: var(--theme-surface-subtle) !important;
+  border-color: var(--theme-border) !important;
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.theme-header {
+  background-color: var(--theme-header-bg) !important;
+  border-color: var(--theme-header-border) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.theme-title-gradient {
+  background: var(--theme-gradient-title) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
 .theme-primary-text {
   color: var(--theme-primary) !important;
 }
@@ -101,98 +193,63 @@ body {
 }
 
 .theme-cta-btn {
-  background: linear-gradient(135deg, var(--theme-accent) 0%, var(--theme-accent-hover) 100%) !important;
+  background: var(--theme-btn-gradient) !important;
   color: #ffffff !important;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.25s ease;
+}
+
+.theme-cta-btn:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.22) !important;
 }
 
 .theme-primary-btn {
-  background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-primary-hover) 100%) !important;
+  background: var(--theme-btn-primary) !important;
   color: #ffffff !important;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.25s ease;
 }
 
-/* Custom Utilities */
-.bg-pale-blue {
-  background-color: #f4f8fe;
+.theme-primary-btn:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.22) !important;
 }
 
-.text-navy {
-  color: #091a36;
-}
-
-.text-royal {
-  color: #1d4ed8;
-}
-
-.bg-brand-orange {
-  background-color: #ea580c;
-}
-
-.bg-brand-orange:hover {
-  background-color: #c2410c;
+.theme-hero-glow {
+  background-image: 
+    radial-gradient(at 15% 10%, var(--theme-glow-orb-1) 0px, transparent 55%),
+    radial-gradient(at 85% 15%, var(--theme-glow-orb-2) 0px, transparent 55%),
+    radial-gradient(at 50% 95%, var(--theme-glow-orb-1) 0px, transparent 65%);
 }
 
 .section-spacing {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
 }
 
 @media (max-width: 768px) {
   .section-spacing {
-    padding-top: 3.25rem;
-    padding-bottom: 3.25rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 }
 
-/* Glassmorphism & Luxury Cards */
+/* Glass & Hover */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(226, 232, 240, 0.85);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--theme-border);
 }
 
 .glass-panel-dark {
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* Card Hover Elevation */
-.hover-card-elevate {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
-}
-
-.hover-card-elevate:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 35px -12px rgba(15, 23, 42, 0.09), 0 0 1px 1px rgba(29, 78, 216, 0.08);
-}
-
-/* Subtle Gradient Glow & Shimmer */
-.bg-mesh-glow {
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(29, 78, 216, 0.08) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(234, 88, 12, 0.06) 0px, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(59, 130, 246, 0.05) 0px, transparent 50%);
-}
-
-.bg-radial-gradient {
-  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
-}
-
-.text-gradient-primary {
-  background: linear-gradient(135deg, #091a36 0%, #1d4ed8 60%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-orange {
-  background: linear-gradient(135deg, #ea580c 0%, #f97316 50%, #fb923c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Shimmer Button Effect */
 @keyframes shimmer {
   100% {
     transform: translateX(100%);
@@ -205,20 +262,18 @@ body {
 }
 
 .shimmer-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  transform: translateX(-100%);
-  background-image: linear-gradient(
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0) 0,
-    rgba(255, 255, 255, 0.2) 20%,
-    rgba(255, 255, 255, 0.5) 60%,
-    rgba(255, 255, 255, 0)
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.24) 50%,
+    rgba(255, 255, 255, 0) 100%
   );
-  animation: shimmer 3s infinite;
+  transform: translateX(-150%);
+  animation: shimmer 3.5s infinite;
 }
-
