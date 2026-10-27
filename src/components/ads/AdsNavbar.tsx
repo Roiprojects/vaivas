@@ -58,8 +58,8 @@ export function AdsNavbar() {
             <Link href="/ads" className="flex items-center gap-3 group">
               <div className="relative h-12 w-44 sm:w-52 transition-transform group-hover:scale-102">
                 <Image
-                  src="/images/logos/vaivas-ads-tight.png"
-                  alt="Vaivas Ads - By vaivas ventures"
+                  src="/images/logos/vaivas-ads-logo.png"
+                  alt="Vaivas Ads - Big ideas. Real impact."
                   fill
                   className="object-contain object-left"
                   priority

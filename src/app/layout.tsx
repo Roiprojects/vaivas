@@ -37,6 +37,8 @@ export const metadata: Metadata = {
   },
 };
 
+import MobileAppDock from "@/components/MobileAppDock";
+
 export default function RootLayout({
   children,
 }: {
@@ -45,7 +47,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full scroll-smooth">
       <body className="min-h-full flex flex-col antialiased selection:bg-blue-600 selection:text-white">
-        {children}
+        <div className="flex-1 pb-20 lg:pb-0">{children}</div>
+        <MobileAppDock />
       </body>
     </html>
   );

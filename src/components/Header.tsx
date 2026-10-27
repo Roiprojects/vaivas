@@ -26,31 +26,59 @@ export default function Header() {
     setBusinessDropdownOpen(false);
   }, [pathname]);
 
-  const isBusinessActive =
-    pathname.startsWith("/jobs") || pathname.startsWith("/ads") || pathname.startsWith("/hr-recruitment");
+  const isJobs = pathname.startsWith("/jobs");
+  const isAds = pathname.startsWith("/ads");
+  const isBusinessActive = isJobs || isAds || pathname.startsWith("/hr-recruitment");
+
+  let currentLogo = "/images/logos/vaivas-ventures-logo.png";
+  let logoAlt = "Vaivas Ventures — Your success, our mission";
+  let logoLink = "/";
+  let brandPill = "Ventures";
+  let brandPillColor = "bg-slate-100 text-slate-700 border-slate-200";
+
+  if (isJobs) {
+    currentLogo = "/images/logos/vaivas-jobs-logo.png";
+    logoAlt = "Vaivas Jobs — Connecting Opportunities";
+    logoLink = "/jobs";
+    brandPill = "Jobs";
+    brandPillColor = "bg-blue-50 text-blue-700 border-blue-200";
+  } else if (isAds) {
+    currentLogo = "/images/logos/vaivas-ads-logo.png";
+    logoAlt = "Vaivas Ads — Big ideas. Real impact.";
+    logoLink = "/ads";
+    brandPill = "Ads";
+    brandPillColor = "bg-orange-50 text-orange-700 border-orange-200";
+  }
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/90 backdrop-blur-xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.06)] border-b border-slate-200/80 py-3"
-          : "bg-white/80 backdrop-blur-md border-b border-slate-200/50 py-4"
+          ? "bg-white/90 backdrop-blur-xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.06)] border-b border-slate-200/80 py-2.5 sm:py-3"
+          : "bg-white/80 backdrop-blur-md border-b border-slate-200/50 py-3 sm:py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Brand Logo with Authentic Tagline */}
-          <Link href="/" className="flex items-center group">
-            <div className="relative h-12 w-48 sm:h-14 sm:w-56 transition-transform group-hover:scale-[1.02]">
-              <Image
-                src="/images/logos/vaivas-ventures-logo.png"
-                alt="Vaivas Ventures — Your success, our mission"
-                fill
-                priority
-                className="object-contain object-left"
-              />
-            </div>
-          </Link>
+          {/* Brand Logo with Dynamic Switching for Jobs and Ads */}
+          <div className="flex items-center gap-2.5">
+            <Link href={logoLink} className="flex items-center group">
+              <div className="relative h-11 w-44 sm:h-14 sm:w-56 transition-transform group-hover:scale-[1.02]">
+                <Image
+                  src={currentLogo}
+                  alt={logoAlt}
+                  fill
+                  priority
+                  className="object-contain object-left"
+                />
+              </div>
+            </Link>
+            <span
+              className={`hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-semibold tracking-wide border shadow-2xs ${brandPillColor}`}
+            >
+              {brandPill}
+            </span>
+          </div>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
@@ -201,101 +229,129 @@ export default function Header() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center">
+          {/* Mobile App Bar Actions */}
+          <div className="lg:hidden flex items-center gap-2">
+            <Link
+              href="/contact"
+              className="px-3 py-1.5 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-orange-500 to-amber-500 shadow-sm active:scale-95 transition-transform"
+            >
+              Connect
+            </Link>
+
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors"
+              className="p-2 rounded-full text-slate-700 hover:bg-slate-100 transition-colors border border-slate-200/80 active:scale-90"
               aria-label="Toggle Navigation Menu"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile App Sheet Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-16 bg-white border-b border-slate-200 px-5 pt-3 pb-6 space-y-2 shadow-2xl animate-in slide-in-from-top-4 duration-200 z-50">
-          <Link
-            href="/"
-            className="block py-2.5 text-base font-medium text-slate-800 hover:text-blue-600 border-b border-slate-100"
-          >
-            Home
-          </Link>
-          <Link
-            href="/about"
-            className="block py-2.5 text-base font-medium text-slate-800 hover:text-blue-600 border-b border-slate-100"
-          >
-            About Us
-          </Link>
-
-          <div className="py-2 border-b border-slate-100">
-            <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">
-              Our Businesses
+        <div className="lg:hidden fixed inset-x-0 top-[60px] max-h-[85vh] overflow-y-auto bg-white/95 backdrop-blur-2xl border-b border-slate-200/90 px-4 pt-4 pb-8 space-y-4 shadow-2xl animate-in slide-in-from-top-3 duration-200 z-50">
+          {/* Quick Business Switcher (App-style cards) */}
+          <div>
+            <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2.5 px-1">
+              Select Vertical
             </div>
-            <div className="pl-2 space-y-2">
+            <div className="grid grid-cols-3 gap-2">
               <Link
                 href="/jobs"
-                className="flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-blue-600"
+                className={`p-3 rounded-2xl border flex flex-col items-center text-center gap-1.5 transition-all ${
+                  isJobs
+                    ? "bg-blue-50 border-blue-300 text-blue-700 shadow-xs"
+                    : "bg-slate-50 border-slate-200/70 text-slate-700 hover:bg-blue-50/50"
+                }`}
               >
-                <Briefcase className="w-4 h-4 text-blue-600" />
-                <span>Vaivas Jobs</span>
+                <div className="w-9 h-9 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center">
+                  <Briefcase className="w-4 h-4" />
+                </div>
+                <span className="text-xs font-bold leading-tight">Vaivas Jobs</span>
+                <span className="text-[10px] text-slate-500">Careers</span>
               </Link>
+
               <Link
                 href="/ads"
-                className="flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-orange-600"
+                className={`p-3 rounded-2xl border flex flex-col items-center text-center gap-1.5 transition-all ${
+                  isAds
+                    ? "bg-orange-50 border-orange-300 text-orange-700 shadow-xs"
+                    : "bg-slate-50 border-slate-200/70 text-slate-700 hover:bg-orange-50/50"
+                }`}
               >
-                <Megaphone className="w-4 h-4 text-orange-600" />
-                <span>Vaivas Ads</span>
+                <div className="w-9 h-9 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center">
+                  <Megaphone className="w-4 h-4" />
+                </div>
+                <span className="text-xs font-bold leading-tight">Vaivas Ads</span>
+                <span className="text-[10px] text-slate-500">Marketing</span>
               </Link>
+
               <Link
                 href="/hr-recruitment"
-                className="flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-emerald-600"
+                className="p-3 rounded-2xl border border-slate-200/70 bg-slate-50 text-slate-700 hover:bg-emerald-50/50 flex flex-col items-center text-center gap-1.5 transition-all"
               >
-                <Users className="w-4 h-4 text-emerald-600" />
-                <span>HR Recruitment</span>
+                <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                  <Users className="w-4 h-4" />
+                </div>
+                <span className="text-xs font-bold leading-tight">HR Talent</span>
+                <span className="text-[10px] text-slate-500">Staffing</span>
               </Link>
             </div>
           </div>
 
-          <Link
-            href="/gallery"
-            className="block py-2.5 text-base font-medium text-slate-800 hover:text-blue-600 border-b border-slate-100"
-          >
-            Gallery
-          </Link>
-          <Link
-            href="/blogs"
-            className="block py-2.5 text-base font-medium text-slate-800 hover:text-blue-600 border-b border-slate-100"
-          >
-            Blogs
-          </Link>
-          <Link
-            href="/testimonials"
-            className="block py-2.5 text-base font-medium text-slate-800 hover:text-blue-600 border-b border-slate-100"
-          >
-            Testimonials
-          </Link>
-          <Link
-            href="/contact"
-            className="block py-2.5 text-base font-medium text-slate-800 hover:text-blue-600 border-b border-slate-100"
-          >
-            Contact Us
-          </Link>
+          {/* Quick Links Menu */}
+          <div className="bg-slate-50/80 rounded-2xl border border-slate-200/60 p-2 space-y-1">
+            <Link
+              href="/"
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-800 hover:bg-white transition-colors"
+            >
+              <span>Corporate Home</span>
+              <ArrowRight className="w-4 h-4 text-slate-400" />
+            </Link>
+            <Link
+              href="/about"
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-800 hover:bg-white transition-colors"
+            >
+              <span>About Vaivas</span>
+              <ArrowRight className="w-4 h-4 text-slate-400" />
+            </Link>
+            <Link
+              href="/gallery"
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-800 hover:bg-white transition-colors"
+            >
+              <span>Life & Work Gallery</span>
+              <ArrowRight className="w-4 h-4 text-slate-400" />
+            </Link>
+            <Link
+              href="/blogs"
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-800 hover:bg-white transition-colors"
+            >
+              <span>Insights & Blogs</span>
+              <ArrowRight className="w-4 h-4 text-slate-400" />
+            </Link>
+            <Link
+              href="/testimonials"
+              className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-semibold text-slate-800 hover:bg-white transition-colors"
+            >
+              <span>Client Reviews</span>
+              <ArrowRight className="w-4 h-4 text-slate-400" />
+            </Link>
+          </div>
 
-          <div className="pt-3 flex flex-col gap-2">
+          <div className="pt-2 flex flex-col gap-2">
             <Link
               href="/contact"
-              className="w-full text-center py-3 rounded-full text-sm font-medium text-white bg-gradient-to-r from-orange-500 to-orange-600 shadow-md"
+              className="w-full text-center py-3 rounded-full text-sm font-bold text-white bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 shadow-md active:scale-95 transition-transform"
             >
-              Let&apos;s Connect
+              Get in Touch Directly
             </Link>
             <Link
               href="/admin"
               className="w-full text-center py-2 text-xs text-slate-500 hover:text-slate-800"
             >
-              Staff Portal Login
+              Staff Portal Access
             </Link>
           </div>
         </div>
