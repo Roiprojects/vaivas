@@ -277,3 +277,16 @@ body {
   transform: translateX(-150%);
   animation: shimmer 3.5s infinite;
 }
+
+/* Aspect Ratio Fallbacks for Image Containers */
+.aspect-16\/11 {
+  aspect-ratio: 16 / 11 !important;
+}
+
+.aspect-16\/10 {
+  aspect-ratio: 16 / 10 !important;
+}
+
+.aspect-16\/9 {
+  aspect-ratio: 16 / 9 !important;
+}

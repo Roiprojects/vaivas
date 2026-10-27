@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      aspectRatio: {
+        "16/10": "16 / 10",
+        "16/11": "16 / 11",
+        "16/9": "16 / 9",
+        "4/3": "4 / 3",
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

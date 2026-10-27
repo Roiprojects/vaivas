@@ -118,13 +118,13 @@ export default async function HomePage() {
             </div>
 
             {/* Right Column: Visual Showcase with Floating Glass Cards */}
-            <div className="lg:col-span-6 relative">
+            <div className="lg:col-span-6 relative mt-6 lg:mt-0">
               <div className="relative mx-auto max-w-lg lg:max-w-none">
                 {/* Decorative Ambient Aura */}
                 <div className="absolute -inset-2 bg-gradient-to-tr from-amber-500/15 via-blue-400/15 to-emerald-400/15 rounded-[2.5rem] blur-xl"></div>
                 
                 {/* Hero Team Visual (4K High Resolution) */}
-                <div className="relative rounded-[2.5rem] overflow-hidden border-4 border-white shadow-2xl bg-slate-100 aspect-16/11">
+                <div className="relative w-full rounded-[2.5rem] overflow-hidden border-4 border-white shadow-2xl bg-slate-100 aspect-16/11 min-h-[300px] sm:min-h-[380px] lg:min-h-[440px]">
                   <Image
                     src="/images/hero-team.jpg"
                     alt="Vaivas Ventures team and culture"
@@ -137,8 +137,8 @@ export default async function HomePage() {
                 </div>
 
                 {/* Floating Glass Metric Chip (Top Right) */}
-                <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 glass-panel rounded-2xl p-3 shadow-xl hidden sm:flex items-center gap-3 animate-in fade-in duration-500">
-                  <div className="w-10 h-10 rounded-xl theme-primary-bg text-white flex items-center justify-center font-bold text-sm shadow-md">
+                <div className="absolute -top-3 -right-3 sm:-top-5 sm:-right-5 glass-panel rounded-2xl p-3 sm:p-3.5 shadow-xl hidden sm:flex items-center gap-3 animate-in fade-in duration-500 z-20">
+                  <div className="w-10 h-10 rounded-xl theme-primary-bg text-white flex items-center justify-center font-bold text-sm shadow-md shrink-0">
                     <Briefcase className="w-5 h-5" />
                   </div>
                   <div>
@@ -148,8 +148,8 @@ export default async function HomePage() {
                 </div>
 
                 {/* Floating Glass Metric Chip (Bottom Left) */}
-                <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 glass-panel rounded-2xl p-3 shadow-xl hidden sm:flex items-center gap-3 animate-in fade-in duration-700">
-                  <div className="w-10 h-10 rounded-xl theme-accent-bg text-white flex items-center justify-center font-bold text-sm shadow-md">
+                <div className="absolute -bottom-3 -left-3 sm:-bottom-5 sm:-left-5 glass-panel rounded-2xl p-3 sm:p-3.5 shadow-xl hidden sm:flex items-center gap-3 animate-in fade-in duration-700 z-20">
+                  <div className="w-10 h-10 rounded-xl theme-accent-bg text-white flex items-center justify-center font-bold text-sm shadow-md shrink-0">
                     <Sparkles className="w-5 h-5" />
                   </div>
                   <div>
@@ -228,7 +228,7 @@ export default async function HomePage() {
                 </div>
 
                 {/* Large 4K Visual Photo */}
-                <div className="relative rounded-2xl overflow-hidden aspect-16/10 shadow-sm border border-black/5">
+                <div className="relative w-full rounded-2xl overflow-hidden aspect-16/10 min-h-[190px] shadow-sm border border-black/5">
                   <Image
                     src="/images/pillar-jobs.jpg"
                     alt="Vaivas Jobs career candidates"
@@ -294,7 +294,7 @@ export default async function HomePage() {
                 </div>
 
                 {/* Large 4K Visual Photo */}
-                <div className="relative rounded-2xl overflow-hidden aspect-16/10 shadow-sm border border-black/5">
+                <div className="relative w-full rounded-2xl overflow-hidden aspect-16/10 min-h-[190px] shadow-sm border border-black/5">
                   <Image
                     src="/images/pillar-ads.jpg"
                     alt="Vaivas Ads creative marketing agency"
@@ -360,7 +360,7 @@ export default async function HomePage() {
                 </div>
 
                 {/* Large 4K Visual Photo */}
-                <div className="relative rounded-2xl overflow-hidden aspect-16/10 shadow-sm border border-black/5">
+                <div className="relative w-full rounded-2xl overflow-hidden aspect-16/10 min-h-[190px] shadow-sm border border-black/5">
                   <Image
                     src="/images/pillar-hr.jpg"
                     alt="HR recruitment interviews and executive placement"
@@ -439,7 +439,7 @@ export default async function HomePage() {
           {/* 6-Card 4K High-Definition Image Showcase Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Image 1 - 4K Luxury Stationery */}
-            <div className="theme-surface group relative rounded-3xl overflow-hidden aspect-16/10 border">
+            <div className="theme-surface group relative rounded-3xl overflow-hidden aspect-16/10 min-h-[220px] border">
               <Image
                 src="/images/ads/project-1.jpg"
                 alt="Brand Identity & Creative Design"
@@ -455,7 +455,7 @@ export default async function HomePage() {
             </div>
 
             {/* Image 2 - 4K 2026 Bespoke Calendar */}
-            <div className="theme-surface group relative rounded-3xl overflow-hidden aspect-16/10 border">
+            <div className="theme-surface group relative rounded-3xl overflow-hidden aspect-16/10 min-h-[220px] border">
               <Image
                 src="/images/ads/print-calendar-showcase.jpg"
                 alt="Commercial Print & Calendar Production"
@@ -471,7 +471,7 @@ export default async function HomePage() {
             </div>
 
             {/* Image 3 - 4K Career Success */}
-            <div className="theme-surface group relative rounded-3xl overflow-hidden aspect-16/10 border">
+            <div className="theme-surface group relative rounded-3xl overflow-hidden aspect-16/10 min-h-[220px] border">
               <Image
                 src="/images/gallery-2.jpg"
                 alt="Collaborative Workplace Culture"
@@ -487,7 +487,7 @@ export default async function HomePage() {
             </div>
 
             {/* Image 4 - 4K 3D Digital Billboard */}
-            <div className="theme-surface group relative rounded-3xl overflow-hidden aspect-16/10 border">
+            <div className="theme-surface group relative rounded-3xl overflow-hidden aspect-16/10 min-h-[220px] border">
               <Image
                 src="/images/ads/project-2.jpg"
                 alt="Performance Marketing Campaigns"
@@ -503,7 +503,7 @@ export default async function HomePage() {
             </div>
 
             {/* Image 5 - 4K Executive Boardroom */}
-            <div className="theme-surface group relative rounded-3xl overflow-hidden aspect-16/10 border">
+            <div className="theme-surface group relative rounded-3xl overflow-hidden aspect-16/10 min-h-[220px] border">
               <Image
                 src="/images/gallery-1.jpg"
                 alt="Executive Strategy & Client Reviews"
@@ -519,7 +519,7 @@ export default async function HomePage() {
             </div>
 
             {/* Image 6 - 4K Bengaluru Venture Studio Headquarters */}
-            <div className="theme-surface group relative rounded-3xl overflow-hidden aspect-16/10 border">
+            <div className="theme-surface group relative rounded-3xl overflow-hidden aspect-16/10 min-h-[220px] border">
               <Image
                 src="/images/gallery-3.jpg"
                 alt="Innovation & Milestones"
