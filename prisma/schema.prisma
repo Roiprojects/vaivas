@@ -1,0 +1,588 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ----------------------------------------------------
+// 1. ADMIN USERS & AUDIT LOGS
+// ----------------------------------------------------
+enum UserRole {
+  SUPERADMIN
+  ADMIN
+  RECRUITER
+  EDITOR
+}
+
+model AdminUser {
+  id           String        @id @default(uuid())
+  name         String
+  email        String        @unique
+  passwordHash String
+  role         UserRole      @default(ADMIN)
+  isActive     Boolean       @default(true)
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  activityLogs ActivityLog[]
+}
+
+model ActivityLog {
+  id          String     @id @default(uuid())
+  userId      String?
+  userName    String?
+  action      String     // e.g. "CREATE_JOB", "UPDATE_STATUS", "PUBLISH_BLOG"
+  module      String     // e.g. "JOBS", "RECRUITMENT", "CONTENT"
+  details     String?    // JSON or human description
+  ipAddress   String?
+  createdAt   DateTime   @default(now())
+  adminUser   AdminUser? @relation(fields: [userId], references: [id], onDelete: SetNull)
+}
+
+// ----------------------------------------------------
+// 2. JOBS & TALENT SYSTEM
+// ----------------------------------------------------
+enum JobStatus {
+  DRAFT
+  PUBLISHED
+  CLOSED
+}
+
+model JobListing {
+  id              String           @id @default(uuid())
+  title           String
+  slug            String           @unique
+  department      String
+  location        String
+  employmentType  String           // "Full-time", "Part-time", "Contract", "Hybrid", "Remote"
+  experienceLevel String           // "0-2 years", "3-5 years", "5+ years", etc.
+  openings        Int              @default(1)
+  salaryRange     String?
+  description     String
+  requirements    String
+  responsibilities String?
+  benefits        String?
+  status          JobStatus        @default(DRAFT)
+  expiryDate      DateTime?
+  postedAt        DateTime         @default(now())
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  applications    JobApplication[]
+}
+
+model CandidateProfile {
+  id                 String             @id @default(uuid())
+  fullName           String
+  email              String             @unique
+  phone              String
+  currentRole        String?
+  preferredRole      String?
+  totalExperience    String?            // e.g. "4 years"
+  keySkills          String?            // comma-separated or json
+  currentCompany     String?
+  expectedSalary     String?
+  preferredLocation  String?
+  availability       String?            // "Immediate", "15 days", "30 days"
+  resumeUrl          String?
+  resumeOriginalName String?
+  notes              String?
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+  applications       JobApplication[]
+  matches            CandidateMatch[]
+}
+
+enum ApplicationStatus {
+  NEW
+  REVIEWING
+  SHORTLISTED
+  INTERVIEWING
+  REJECTED
+  HIRED
+}
+
+model JobApplication {
+  id                 String            @id @default(uuid())
+  jobId              String
+  candidateId        String
+  fullName           String
+  email              String
+  phone              String
+  experience         String?
+  coverLetter        String?
+  resumeUrl          String
+  resumeOriginalName String
+  status             ApplicationStatus @default(NEW)
+  notes              String?
+  createdAt          DateTime          @default(now())
+  updatedAt          DateTime          @updatedAt
+  job                JobListing        @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  candidate          CandidateProfile  @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+}
+
+// ----------------------------------------------------
+// 3. HR RECRUITMENT OPERATIONS (B2B & CANDIDATE MATCHING)
+// ----------------------------------------------------
+enum RequirementStatus {
+  NEW
+  IN_REVIEW
+  ACTIVE
+  ON_HOLD
+  FILLED
+  CLOSED
+}
+
+model EmployerRequirement {
+  id                    String            @id @default(uuid())
+  companyName           String
+  contactPerson         String
+  email                 String
+  phone                 String
+  jobRole               String
+  location              String
+  openings              Int               @default(1)
+  experience            String
+  skills                String
+  employmentType        String
+  hiringTimeline        String
+  budgetRange           String?
+  status                RequirementStatus @default(NEW)
+  assignedRecruiterId   String?
+  assignedRecruiterName String?
+  notes                 String?
+  nextFollowUpDate      DateTime?
+  createdAt             DateTime          @default(now())
+  updatedAt             DateTime          @updatedAt
+  matches               CandidateMatch[]
+}
+
+enum MatchStatus {
+  NEW
+  SCREENING
+  SHORTLISTED
+  INTERVIEW_SCHEDULED
+  SELECTED
+  OFFERED
+  JOINED
+  REJECTED
+  WITHDRAWN
+}
+
+model CandidateMatch {
+  id                    String              @id @default(uuid())
+  employerRequirementId String
+  candidateId           String
+  status                MatchStatus         @default(NEW)
+  currentSalary         String?
+  offeredSalary         String?
+  joiningDate           DateTime?
+  recruiterNotes        String?
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+  employerRequirement   EmployerRequirement @relation(fields: [employerRequirementId], references: [id], onDelete: Cascade)
+  candidate             CandidateProfile    @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  interviews            Interview[]
+}
+
+enum InterviewResult {
+  PENDING
+  PASSED
+  FAILED
+  RESCHEDULED
+  CANCELLED
+}
+
+model Interview {
+  id               String          @id @default(uuid())
+  candidateMatchId String
+  scheduledAt      DateTime
+  mode             String          // "Virtual / Google Meet", "In-Person", "Telephonic"
+  round            String          // "Technical Round", "HR Round", "Final Discussion"
+  interviewerName  String?
+  interviewerEmail String?
+  meetingLink      String?
+  feedback         String?
+  result           InterviewResult @default(PENDING)
+  nextAction       String?
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  candidateMatch   CandidateMatch  @relation(fields: [candidateMatchId], references: [id], onDelete: Cascade)
+}
+
+// ----------------------------------------------------
+// 4. VAIVAS ADS & CAMPAIGNS
+// ----------------------------------------------------
+model AdCampaign {
+  id             String    @id @default(uuid())
+  title          String
+  clientName     String
+  category       String    // "Digital Ads", "Social Media", "Print Media", "Branding", "Video Production", "Calendars"
+  summary        String
+  deliverables   String?
+  coverImage     String?
+  images         String[]
+  resultsMetrics String?
+  isFeatured     Boolean   @default(false)
+  isPublished    Boolean   @default(true)
+  order          Int       @default(0)
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model AdEnquiry {
+  id             String    @id @default(uuid())
+  fullName       String
+  email          String
+  phone          String
+  companyName    String?
+  serviceType    String
+  budgetRange    String?
+  campaignGoals  String
+  timeline       String?
+  status         String    @default("NEW") // "NEW", "CONTACTED", "QUALIFIED", "PROPOSAL_SENT", "WON", "LOST"
+  notes          String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+// ----------------------------------------------------
+// 5. EDITORIAL CONTENT, BLOGS, GALLERY, TESTIMONIALS
+// ----------------------------------------------------
+model BlogPost {
+  id              String    @id @default(uuid())
+  title           String
+  slug            String    @unique
+  excerpt         String
+  content         String
+  category        String
+  authorName      String    @default("Vaivas Team")
+  authorRole      String?   @default("Editorial")
+  authorAvatar    String?
+  coverImage      String?
+  tags            String[]
+  readTimeMinutes Int       @default(4)
+  isPublished     Boolean   @default(true)
+  publishedAt     DateTime  @default(now())
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model GalleryItem {
+  id          String   @id @default(uuid())
+  title       String
+  category    String   // "Events", "Office Life", "Team Celebrations", "Client Visits", "CSR"
+  imageUrl    String
+  caption     String?
+  order       Int      @default(0)
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+}
+
+model Testimonial {
+  id              String   @id @default(uuid())
+  clientName      String
+  designation     String
+  company         String
+  testimonialType String   @default("Client") // "Client", "Employer", "Candidate", "Partner"
+  content         String
+  avatarUrl       String?
+  rating          Int      @default(5)
+  isFeatured      Boolean  @default(true)
+  isApproved      Boolean  @default(true)
+  order           Int      @default(0)
+  createdAt       DateTime @default(now())
+}
+
+model ContactEnquiry {
+  id              String   @id @default(uuid())
+  fullName        String
+  email           String
+  phone           String
+  enquiryCategory String   @default("General") // "General", "Jobs / Careers", "Advertising", "HR Recruitment", "Partnership"
+  message         String
+  status          String   @default("NEW")     // "NEW", "IN_PROGRESS", "RESOLVED", "CLOSED"
+  notes           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+// ----------------------------------------------------
+// 6. CMS & SETTINGS (DRAFT -> PREVIEW -> PUBLISH)
+// ----------------------------------------------------
+model PageContent {
+  id             String    @id // e.g. "home", "about", "mission-vision", "hr-recruitment", "ads"
+  draftData      Json      // Editable draft JSON
+  publishedData  Json      // Live public JSON
+  isPublished    Boolean   @default(true)
+  lastPublishedAt DateTime @default(now())
+  updatedAt      DateTime  @updatedAt
+}
+
+model WebsiteSetting {
+  id            String   @id @default("global")
+  siteTitle     String   @default("Vaivas Ventures")
+  tagline       String   @default("Your success, our mission")
+  companyEmail  String   @default("info@vaivasventures.com")
+  companyPhone  String   @default("+91 98765 43210")
+  address       String   @default("Vaivas Towers, Outer Ring Road, Bengaluru, Karnataka 560103")
+  socialLinks   Json?
+  externalAdsUrl String  @default("https://vaivasads.com")
+  seoMetadata   Json?
+  updatedAt     DateTime @updatedAt
+}
+
+// ----------------------------------------------------
+// 7. VAIVAS ADS & PRINT PRODUCTION OPERATIONS SYSTEM
+// ----------------------------------------------------
+model AdsService {
+  id           String   @id @default(uuid())
+  name         String
+  slug         String   @unique
+  category     String   // "Digital Advertising", "Branding & Creative", "Web & Content", "Print Media & Calendars"
+  summary      String
+  description  String
+  icon         String   @default("Sparkles")
+  thumbnail    String?
+  bannerImage  String?
+  benefits     String[]
+  inclusions   String[]
+  process      Json?    // Array of { stepNumber, title, description }
+  faqs         Json?    // Array of { question, answer }
+  ctaText      String   @default("Get a Free Consultation")
+  ctaLink      String   @default("/ads/quote")
+  seoTitle     String?
+  seoDesc      String?
+  order        Int      @default(0)
+  isPublished  Boolean  @default(true)
+  isFeatured   Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model AdsProject {
+  id            String   @id @default(uuid())
+  title         String
+  slug          String   @unique
+  clientName    String
+  category      String   // "Branding", "Digital Ads", "Social Media", "Web Design", "Print Creatives", "Video Production", "Calendars"
+  industry      String   @default("Corporate")
+  summary       String
+  description   String
+  deliverables  String[]
+  coverImage    String
+  galleryImages String[]
+  videoUrl      String?
+  isFeatured    Boolean  @default(false)
+  isPublished   Boolean  @default(true)
+  order         Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model AdsCaseStudy {
+  id              String   @id @default(uuid())
+  title           String
+  slug            String   @unique
+  clientName      String
+  industry        String
+  serviceCategory String
+  challenge       String
+  objective       String
+  strategy        String
+  execution       String
+  channels        String[]
+  duration        String
+  resultsMetrics  Json     // Key verified performance indicators
+  coverImage      String
+  mediaImages     String[]
+  isPublished     Boolean  @default(true)
+  isApproved      Boolean  @default(true)
+  order           Int      @default(0)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model AdsClientTestimonial {
+  id          String   @id @default(uuid())
+  clientName  String
+  designation String
+  company     String
+  logoUrl     String?
+  avatarUrl   String?
+  content     String
+  rating      Int      @default(5)
+  isFeatured  Boolean  @default(true)
+  isApproved  Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+model AdsBlogArticle {
+  id              String   @id @default(uuid())
+  title           String
+  slug            String   @unique
+  excerpt         String
+  content         String
+  category        String   // "Digital Advertising", "Marketing Strategy", "Branding", "Social Media", "Print Media"
+  coverImage      String
+  authorName      String   @default("Vaivas Ads Creative Team")
+  authorRole      String?  @default("Brand Strategist")
+  tags            String[]
+  readTimeMinutes Int      @default(4)
+  isPublished     Boolean  @default(true)
+  publishedAt     DateTime @default(now())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model AdsLead {
+  id               String         @id @default(uuid())
+  refNumber        String         @unique // e.g. "ENQ-ADS-2026-1001"
+  fullName         String
+  email            String
+  phone            String
+  companyName      String?
+  serviceType      String
+  budgetRange      String?
+  timeline         String?
+  description      String
+  source           String         @default("Quote Form") // "Contact Form", "Quote Form", "Consultation", "Print Configurator", "Calendar Configurator"
+  status           String         @default("NEW") // "NEW", "CONTACTED", "QUALIFIED", "PROPOSAL_SENT", "NEGOTIATION", "WON", "LOST", "CLOSED"
+  assignedStaff    String?
+  internalNotes    String?
+  nextFollowUpDate DateTime?
+  printSpecs       Json?          // Conditional fields for print media products
+  calendarSpecs    Json?          // Conditional fields for calendars
+  artworkFiles     String[]
+  quotations       AdsQuotation[]
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+}
+
+model AdsQuotation {
+  id                     String    @id @default(uuid())
+  quotationNumber        String    @unique // e.g. "QT-2026-0001"
+  revisionNumber         Int       @default(1)
+  leadId                 String?
+  leadRefNumber          String?
+  customerName           String
+  customerEmail          String
+  customerPhone          String
+  companyName            String?
+  billingAddress         String?
+  issueDate              DateTime  @default(now())
+  validityDate           DateTime
+  specificationsSnapshot Json
+  items                  Json      // Array of { description, quantity, unitRate, amount }
+  subtotal               Float
+  designSetupCost        Float     @default(0)
+  finishingCost          Float     @default(0)
+  deliveryCharges        Float     @default(0)
+  discountAmount         Float     @default(0)
+  taxPercent             Float     @default(18)
+  taxAmount              Float
+  totalAmount            Float
+  advanceRequiredPercent Float     @default(50)
+  advanceAmount          Float
+  commercialTerms        Json      // { leadTime, deliveryBasis, milestones, exclusions, cancellationTerms }
+  status                 String    @default("DRAFT") // "DRAFT", "SENT", "UNDER_REVISION", "ACCEPTED", "REJECTED", "EXPIRED"
+  acceptanceEvidence     String?
+  isConvertedToOrder     Boolean   @default(false)
+  order                  AdsOrder?
+  revisions              Json?     // History of past revisions
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+  lead                   AdsLead?  @relation(fields: [leadId], references: [id], onDelete: SetNull)
+}
+
+model AdsOrder {
+  id                    String            @id @default(uuid())
+  orderNumber           String            @unique // e.g. "ORD-2026-0001"
+  quotationId           String            @unique
+  quotationNumber       String
+  customerName          String
+  customerEmail         String
+  customerPhone         String
+  companyName           String?
+  billingAddress        String?
+  deliveryAddress       String
+  items                 Json
+  specifications        Json
+  totalAmount           Float
+  advancePaid           Float             @default(0)
+  balanceAmount         Float
+  paymentStatus         String            @default("PENDING") // "PENDING", "PARTIALLY_PAID", "FULLY_PAID"
+  requestedDeliveryDate DateTime?
+  confirmedDeliveryDate DateTime?
+  assignedStaff         String?
+  productionVendor      String?
+  jobSheetDetails       Json?
+  status                String            @default("CONFIRMED") // "CONFIRMED", "AWAITING_ARTWORK", "AWAITING_APPROVAL", "READY_FOR_PRODUCTION", "IN_PRODUCTION", "QUALITY_CHECK", "READY_FOR_DISPATCH", "PARTIALLY_DISPATCHED", "DISPATCHED", "DELIVERED", "CLOSED", "ON_HOLD", "CANCELLED"
+  statusReason          String?           // Required for ON_HOLD, CANCELLED
+  artworkProofs         Json?             // Array of { url, version, uploadedAt, notes }
+  isArtworkApproved     Boolean           @default(false)
+  artworkApprovedBy     String?
+  artworkApprovedAt     DateTime?
+  qualityCheckPassed    Boolean           @default(false)
+  qualityCheckNotes     Json?             // Dimensions, material, colours, finish, quantity, calendar dates
+  totalOrderedQty       Int
+  totalDispatchedQty    Int               @default(0)
+  remainingQty          Int
+  issues                Json?             // Damage, shortages, reprints logs
+  createdAt             DateTime          @default(now())
+  updatedAt             DateTime          @updatedAt
+  quotation             AdsQuotation      @relation(fields: [quotationId], references: [id], onDelete: Restrict)
+  shipments             AdsShipment[]
+  billingRecords        AdsBillingRecord[]
+}
+
+model AdsShipment {
+  id                  String    @id @default(uuid())
+  orderId             String
+  shipmentNumber      String    @unique // e.g. "SHP-2026-0001"
+  dispatchedQty       Int
+  packagingDetails    String
+  dispatchDate        DateTime  @default(now())
+  deliveryMethod      String    // "Courier", "Dedicated Vehicle", "Customer Pickup"
+  courierPartner      String?
+  trackingReference   String?
+  shippingCharges     Float     @default(0)
+  deliveryStatus      String    @default("IN_TRANSIT") // "IN_TRANSIT", "DELIVERED", "FAILED"
+  proofOfDelivery     String?
+  deliveryConfirmedAt DateTime?
+  createdAt           DateTime  @default(now())
+  order               AdsOrder  @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+model AdsBillingRecord {
+  id                   String   @id @default(uuid())
+  orderId              String
+  invoiceNumber        String
+  amount               Float
+  type                 String   // "ADVANCE", "MILESTONE", "FINAL_SETTLEMENT"
+  paymentDate          DateTime @default(now())
+  paymentMethod        String   // "Bank Transfer / NEFT / RTGS", "UPI", "Cheque", "Cash"
+  transactionReference String?
+  receiptNotes         String?
+  createdAt            DateTime @default(now())
+  order                AdsOrder @relation(fields: [orderId], references: [id], onDelete: Cascade)
+}
+
+model AdsSetting {
+  id                  String   @id @default("global")
+  companyName         String   @default("Vaivas Ads")
+  tagline             String   @default("Big ideas. Real impact.")
+  parentCompany       String   @default("Vaivas Ventures")
+  phone               String   @default("+91 80 4123 4568")
+  email               String   @default("ads@vaivasventures.com")
+  whatsappNumber      String   @default("+91 98765 43211")
+  address             String   @default("Vaivas Towers, 3rd Floor, Outer Ring Road, Marathahalli, Bengaluru, Karnataka 560103")
+  workingHours        String   @default("Monday - Saturday: 9:30 AM - 6:30 PM IST")
+  consultationPricing String   @default("Complimentary initial consultation")
+  seoMetadata         Json?
+  printOptions        Json?
+  calendarOptions     Json?
+  updatedAt           DateTime @updatedAt
+}
