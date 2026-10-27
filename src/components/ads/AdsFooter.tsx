@@ -94,6 +94,11 @@ export function AdsFooter() {
             <h4 className="text-sm font-semibold text-white uppercase tracking-wider">Company</h4>
             <ul className="space-y-2 text-xs">
               <li>
+                <Link href="/" className="text-orange-400 hover:text-orange-300 font-semibold transition-colors flex items-center gap-1">
+                  <span>← Vaivas Ventures Home</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/ads/about" className="hover:text-white transition-colors">
                   About Us
                 </Link>
