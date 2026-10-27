@@ -33,10 +33,12 @@
   "31": "admin/settings/page.tsx",
   "32": "admin/testimonials/page.tsx",
   "33": "dispatch/route.ts",
-  "34": "quotations/route.ts",
+  "34": "admin/jobs/page.tsx",
   "35": "tailwindcss",
   "36": "admin/about/page.tsx",
   "37": "billing/route.ts",
-  "38": "services/route.ts",
-  "39": "settings/route.ts"
+  "38": "next",
+  "39": "app/gallery/page.tsx",
+  "40": "admin/ads/page.tsx",
+  "41": "leads/route.ts"
 }
