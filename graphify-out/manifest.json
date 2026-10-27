@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
-    "mtime": 1793080869.4899046,
-    "seen": 1793081000.7416263,
-    "ast_hash": "c367d42451ea013069556d1125da9ac8",
+    "mtime": 1793082070.8449347,
+    "seen": 1793082171.257754,
+    "ast_hash": "535d31f89181e06c59b05cd28d4b6e09",
     "semantic_hash": ""
   },
   "src/app/privacy/page.tsx": {
@@ -450,9 +450,9 @@
     "semantic_hash": ""
   },
   "tailwind.config.ts": {
-    "mtime": 1793013168.5097246,
-    "seen": 1793013352.7547164,
-    "ast_hash": "cd13602b310e540b38a889e67e2bf6fb",
+    "mtime": 1793082022.1537638,
+    "seen": 1793082171.257754,
+    "ast_hash": "52fc716bdfccaae1f9c479a2af24e794",
     "semantic_hash": ""
   },
   "tsconfig.json": {
@@ -882,15 +882,15 @@
     "semantic_hash": ""
   },
   "src/components/ads/AdsFooter.tsx": {
-    "mtime": 1793078334.4692683,
-    "seen": 1793078705.0042899,
-    "ast_hash": "1fb2985db4153850670cdbfd93e574ff",
+    "mtime": 1793102225.6885939,
+    "seen": 1793102365.3002467,
+    "ast_hash": "39a18f345b82efaecb1fbd24e9b11b11",
     "semantic_hash": ""
   },
   "src/components/ads/AdsNavbar.tsx": {
-    "mtime": 1793078319.5003712,
-    "seen": 1793078705.0042899,
-    "ast_hash": "155a5d143dd0597e9d16e43c51f3988b",
+    "mtime": 1793102209.043658,
+    "seen": 1793102365.3002467,
+    "ast_hash": "cfea046817be0ab56b1d9c787f6fd929",
     "semantic_hash": ""
   },
   "src/components/ads/AdsQuoteConfigurator.tsx": {
