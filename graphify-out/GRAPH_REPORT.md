@@ -1,17 +1,17 @@
-# Graph Report - vaivas  (2026-10-27)
+# Graph Report - vaivas  (2026-10-28)
 
 ## Corpus Check
-- 123 files · ~1,056,037 words
+- 124 files · ~1,040,482 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 6 file(s) not represented in the graph (top: (none) 2, .example 1, .prisma 1)
 
 ## Summary
-- 477 nodes · 1073 edges · 39 communities (30 shown, 9 thin omitted)
+- 483 nodes · 1081 edges · 37 communities (28 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `13aa5f19`
+- Built from commit: `b5c388ff`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -34,22 +34,20 @@
 - admin/blogs/page.tsx
 - admin/hr-recruitment/page.tsx
 - postcss.config.mjs
-- billing/page.tsx
+- activity-logs/page.tsx
 - dispatch/page.tsx
-- leads/page.tsx
-- orders/page.tsx
-- quotations/page.tsx
-- admin/ads/services/page.tsx
-- ads/settings/page.tsx
+- admin/jobs/page.tsx
+- remove_logo_backgrounds.py
+- home/page.tsx
 - scripts
 - eslint.config.mjs
 - admin/gallery/page.tsx
 - admin/page.tsx
 - admin/settings/page.tsx
 - admin/testimonials/page.tsx
-- next
+- app/layout.tsx
 - tailwindcss
-- admin/about/page.tsx
+- next
 
 ## God Nodes (most connected - your core abstractions)
 1. `react` - 86 edges
@@ -66,8 +64,8 @@
 ## Surprising Connections (you probably didn't know these)
 - `AboutPage()` --calls--> `PublicLayout()`  [EXTRACTED]
   src/app/about/page.tsx → src/components/PublicLayout.tsx
-- `AdminAdsBillingPage()` --calls--> `AdsAdminHeader()`  [EXTRACTED]
-  src/app/admin/ads/billing/page.tsx → src/components/admin/AdsAdminHeader.tsx
+- `AdminActivityLogsPage()` --calls--> `getAdminSession()`  [EXTRACTED]
+  src/app/admin/activity-logs/page.tsx → src/lib/auth.ts
 - `AdminAdsBlogsPage()` --calls--> `AdsAdminHeader()`  [EXTRACTED]
   src/app/admin/ads/blogs/page.tsx → src/components/admin/AdsAdminHeader.tsx
 - `AdminAdsCaseStudiesPage()` --calls--> `AdsAdminHeader()`  [EXTRACTED]
@@ -78,15 +76,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (39 total, 9 thin omitted)
+## Communities (37 total, 9 thin omitted)
 
 ### Community 0 - "react"
 Cohesion: 0.06
-Nodes (46): lucide-react, react, AboutPage(), metadata, BlogsPage(), getBlogs(), metadata, BlogDetailPage() (+38 more)
+Nodes (47): lucide-react, react, AboutPage(), metadata, revalidate, BlogsPage(), getBlogs(), metadata (+39 more)
 
 ### Community 1 - "next"
-Cohesion: 0.09
-Nodes (39): AdminActivityLogsPage(), dynamic, metadata, AdminLayout(), metadata, GET(), GET(), PATCH() (+31 more)
+Cohesion: 0.11
+Nodes (33): AdminLayout(), metadata, GET(), GET(), PATCH(), POST(), GET(), POST() (+25 more)
 
 ### Community 2 - "[id]/route.ts"
 Cohesion: 0.24
@@ -113,8 +111,8 @@ Cohesion: 0.22
 Nodes (9): dependencies, bcryptjs, jsonwebtoken, lucide-react, next, @prisma/client, react, react-dom (+1 more)
 
 ### Community 8 - "AdsAdminHeader"
-Cohesion: 0.17
-Nodes (13): AdminAdsBlogsPage(), metadata, revalidate, AdminAdsCaseStudiesPage(), metadata, revalidate, AdsDashboardPage(), getDashboardData() (+5 more)
+Cohesion: 0.05
+Nodes (44): AdminAdsBillingPage(), metadata, revalidate, AdminAdsBlogsPage(), metadata, revalidate, AdminAdsCaseStudiesPage(), metadata (+36 more)
 
 ### Community 9 - "users/page.tsx"
 Cohesion: 0.32
@@ -144,33 +142,21 @@ Nodes (3): AdminBlogsPage(), getBlogs(), revalidate
 Cohesion: 0.43
 Nodes (5): AdminRecruitmentPage(), getRecruitmentData(), revalidate, AdminRecruitmentManager(), RecruitmentDataProps
 
-### Community 19 - "billing/page.tsx"
+### Community 19 - "activity-logs/page.tsx"
 Cohesion: 0.32
-Nodes (6): AdminAdsBillingPage(), metadata, revalidate, AdminAdsBillingManager(), BillingRecord, OrderSummary
+Nodes (6): AdminActivityLogsPage(), dynamic, metadata, AdminActivityLogsViewer(), AdminActivityLogsViewerProps, LogItem
 
 ### Community 20 - "dispatch/page.tsx"
 Cohesion: 0.32
 Nodes (6): AdminAdsDispatchPage(), metadata, revalidate, AdminAdsDispatchManager(), OrderOption, Shipment
 
-### Community 21 - "leads/page.tsx"
-Cohesion: 0.38
-Nodes (5): AdminAdsLeadsPage(), metadata, revalidate, AdminAdsLeadsManager(), Lead
+### Community 21 - "admin/jobs/page.tsx"
+Cohesion: 0.43
+Nodes (5): AdminJobsPage(), getJobs(), revalidate, AdminJobsManager(), Job
 
-### Community 22 - "orders/page.tsx"
-Cohesion: 0.38
-Nodes (5): AdminAdsOrdersPage(), metadata, revalidate, AdminAdsOrdersManager(), Order
-
-### Community 23 - "quotations/page.tsx"
-Cohesion: 0.38
-Nodes (5): AdminAdsQuotationsPage(), metadata, revalidate, AdminAdsQuotationsManager(), Quotation
-
-### Community 24 - "admin/ads/services/page.tsx"
-Cohesion: 0.38
-Nodes (5): AdminAdsServicesPage(), metadata, revalidate, AdminAdsServicesManager(), Service
-
-### Community 25 - "ads/settings/page.tsx"
-Cohesion: 0.38
-Nodes (5): AdminAdsSettingsPage(), metadata, revalidate, AdminAdsSettingsEditor(), SettingProps
+### Community 23 - "home/page.tsx"
+Cohesion: 0.53
+Nodes (4): AdminHomePage(), getHomeContent(), revalidate, AdminHomeCmsEditor()
 
 ### Community 27 - "scripts"
 Cohesion: 0.33
@@ -196,29 +182,33 @@ Nodes (3): AdminSettingsPage(), getSettings(), revalidate
 Cohesion: 0.67
 Nodes (3): AdminTestimonialsPage(), getTestimonials(), revalidate
 
-### Community 34 - "next"
-Cohesion: 0.10
-Nodes (18): nextConfig, next, AdminHomePage(), getHomeContent(), revalidate, AdminJobsPage(), getJobs(), revalidate (+10 more)
+### Community 34 - "app/layout.tsx"
+Cohesion: 0.29
+Nodes (6): metadata, RootLayout(), LightThemeSwitcher(), THEME_OPTIONS, ThemeOption, MobileAppDock()
+
+### Community 36 - "next"
+Cohesion: 0.22
+Nodes (3): nextConfig, next, revalidate
 
 ## Knowledge Gaps
 - **10 isolated node(s):** `react-dom`, `zod`, `@types/bcryptjs`, `@types/jsonwebtoken`, `@types/node` (+5 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 198 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 199 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `next`, `package.json`, `applications/page.tsx`, `AdsAdminHeader`, `users/page.tsx`, `enquiries/page.tsx`, `next`, `admin/blogs/page.tsx`, `admin/hr-recruitment/page.tsx`, `billing/page.tsx`, `dispatch/page.tsx`, `leads/page.tsx`, `orders/page.tsx`, `quotations/page.tsx`, `admin/ads/services/page.tsx`, `ads/settings/page.tsx`, `admin/gallery/page.tsx`, `admin/page.tsx`, `admin/settings/page.tsx`, `admin/testimonials/page.tsx`, `next`, `admin/about/page.tsx`?**
-  _High betweenness centrality (0.240) - this node is a cross-community bridge._
+- **Why does `react` connect `react` to `next`, `package.json`, `applications/page.tsx`, `AdsAdminHeader`, `users/page.tsx`, `enquiries/page.tsx`, `next`, `admin/blogs/page.tsx`, `admin/hr-recruitment/page.tsx`, `activity-logs/page.tsx`, `dispatch/page.tsx`, `admin/jobs/page.tsx`, `home/page.tsx`, `admin/gallery/page.tsx`, `admin/page.tsx`, `admin/settings/page.tsx`, `admin/testimonials/page.tsx`, `app/layout.tsx`, `next`?**
+  _High betweenness centrality (0.234) - this node is a cross-community bridge._
 - **What connects `react-dom`, `zod`, `@types/bcryptjs` to the rest of the system?**
   _10 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `react` be split into smaller, more focused modules?**
-  _Cohesion score 0.06219918548685672 - nodes in this community are weakly interconnected._
-- **Why does `next` connect `next` to `react`, `next`, `[id]/route.ts`, `package.json`, `AdsAdminHeader`, `users/page.tsx`, `quotations/route.ts`, `prisma.ts`, `next`, `admin/blogs/page.tsx`, `billing/page.tsx`, `dispatch/page.tsx`, `leads/page.tsx`, `orders/page.tsx`, `quotations/page.tsx`, `admin/ads/services/page.tsx`, `billing/route.ts`, `admin/gallery/page.tsx`, `admin/page.tsx`, `dispatch/route.ts`, `admin/about/page.tsx`, `services/route.ts`, `settings/route.ts`?**
-  _High betweenness centrality (0.229) - this node is a cross-community bridge._
+  _Cohesion score 0.05878332194121668 - nodes in this community are weakly interconnected._
+- **Why does `next` connect `next` to `react`, `next`, `[id]/route.ts`, `package.json`, `AdsAdminHeader`, `users/page.tsx`, `quotations/route.ts`, `prisma.ts`, `next`, `admin/blogs/page.tsx`, `activity-logs/page.tsx`, `dispatch/page.tsx`, `admin/jobs/page.tsx`, `home/page.tsx`, `orders/route.ts`, `billing/route.ts`, `admin/gallery/page.tsx`, `admin/page.tsx`, `dispatch/route.ts`, `app/layout.tsx`, `settings/route.ts`?**
+  _High betweenness centrality (0.224) - this node is a cross-community bridge._
 - **Should `next` be split into smaller, more focused modules?**
-  _Cohesion score 0.08635703918722787 - nodes in this community are weakly interconnected._
-- **Why does `lucide-react` connect `react` to `next`, `package.json`, `applications/page.tsx`, `AdsAdminHeader`, `users/page.tsx`, `enquiries/page.tsx`, `next`, `admin/blogs/page.tsx`, `admin/hr-recruitment/page.tsx`, `billing/page.tsx`, `dispatch/page.tsx`, `leads/page.tsx`, `orders/page.tsx`, `quotations/page.tsx`, `admin/ads/services/page.tsx`, `ads/settings/page.tsx`, `admin/gallery/page.tsx`, `admin/page.tsx`, `admin/settings/page.tsx`, `admin/testimonials/page.tsx`, `next`, `admin/about/page.tsx`?**
-  _High betweenness centrality (0.117) - this node is a cross-community bridge._
+  _Cohesion score 0.10808080808080808 - nodes in this community are weakly interconnected._
+- **Why does `lucide-react` connect `react` to `next`, `package.json`, `applications/page.tsx`, `AdsAdminHeader`, `users/page.tsx`, `enquiries/page.tsx`, `next`, `admin/blogs/page.tsx`, `admin/hr-recruitment/page.tsx`, `activity-logs/page.tsx`, `dispatch/page.tsx`, `admin/jobs/page.tsx`, `home/page.tsx`, `admin/gallery/page.tsx`, `admin/page.tsx`, `admin/settings/page.tsx`, `admin/testimonials/page.tsx`, `app/layout.tsx`, `next`?**
+  _High betweenness centrality (0.114) - this node is a cross-community bridge._
 - **Should `package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._

@@ -588,21 +588,21 @@
     "semantic_hash": ""
   },
   "public/images/logos/vaivas-ads-logo.png": {
-    "mtime": 1793078114.4988182,
-    "seen": 1793078705.0042899,
-    "ast_hash": "f8179dd72476cbc81bfbea8d057591d1",
+    "mtime": 1793163874.0030425,
+    "seen": 1793164078.9491236,
+    "ast_hash": "0dd2ec0810c717c65fcb8e128146cf0a",
     "semantic_hash": ""
   },
   "public/images/logos/vaivas-jobs-logo.png": {
-    "mtime": 1793078114.3525758,
-    "seen": 1793078705.0042899,
-    "ast_hash": "d9cc95248d3d6dd82db7166ffb4b46b5",
+    "mtime": 1793163869.6939754,
+    "seen": 1793164078.9496455,
+    "ast_hash": "470677b9e157e293cec27eb26a2ed1fc",
     "semantic_hash": ""
   },
   "public/images/logos/vaivas-ventures-logo.png": {
-    "mtime": 1793078114.67744,
-    "seen": 1793078705.0042899,
-    "ast_hash": "d22fcaa262f62af4c9e2e0846a335e88",
+    "mtime": 1793163863.4096422,
+    "seen": 1793164078.9496455,
+    "ast_hash": "d946469e5183a2d558b36e8087acfc5f",
     "semantic_hash": ""
   },
   "public/images/pillar-ads.jpg": {
@@ -888,9 +888,9 @@
     "semantic_hash": ""
   },
   "src/components/ads/AdsNavbar.tsx": {
-    "mtime": 1793102209.043658,
-    "seen": 1793102365.3002467,
-    "ast_hash": "cfea046817be0ab56b1d9c787f6fd929",
+    "mtime": 1793103082.657319,
+    "seen": 1793103167.0168364,
+    "ast_hash": "7e036b076960ae5fc8c73f7a7e6587e3",
     "semantic_hash": ""
   },
   "src/components/ads/AdsQuoteConfigurator.tsx": {
@@ -948,15 +948,15 @@
     "semantic_hash": ""
   },
   "public/images/logos/vaivas-ads-tight.png": {
-    "mtime": 1793013859.3287988,
-    "seen": 1793014793.026913,
-    "ast_hash": "fc7232830aa7b70ab63f3ac06d0ada92",
+    "mtime": 1793163883.221788,
+    "seen": 1793164078.9491236,
+    "ast_hash": "861f24574b42be77fc6bdc07c3292987",
     "semantic_hash": ""
   },
   "public/images/logos/vaivas-ads.png": {
-    "mtime": 1793013840.9439178,
-    "seen": 1793014793.026913,
-    "ast_hash": "36e666b78f9030b4ef3f13291f2435b4",
+    "mtime": 1793163881.1170201,
+    "seen": 1793164078.9491236,
+    "ast_hash": "91feb78f0e49fd94987030404ae93cb1",
     "semantic_hash": ""
   },
   "src/components/MobileAppDock.tsx": {
@@ -966,27 +966,33 @@
     "semantic_hash": ""
   },
   "public/images/logos/vaivas-ads-logo-tight.png": {
-    "mtime": 1793078114.4988182,
-    "seen": 1793078705.0042899,
-    "ast_hash": "f8179dd72476cbc81bfbea8d057591d1",
+    "mtime": 1793163875.7721188,
+    "seen": 1793164078.9491236,
+    "ast_hash": "0dd2ec0810c717c65fcb8e128146cf0a",
     "semantic_hash": ""
   },
   "public/images/logos/vaivas-jobs-logo-tight.png": {
-    "mtime": 1793078114.3525758,
-    "seen": 1793078705.0042899,
-    "ast_hash": "d9cc95248d3d6dd82db7166ffb4b46b5",
+    "mtime": 1793163871.7720451,
+    "seen": 1793164078.9491236,
+    "ast_hash": "470677b9e157e293cec27eb26a2ed1fc",
     "semantic_hash": ""
   },
   "public/images/logos/vaivas-ventures-logo-tight.png": {
-    "mtime": 1793078114.67744,
-    "seen": 1793078705.0042899,
-    "ast_hash": "d22fcaa262f62af4c9e2e0846a335e88",
+    "mtime": 1793163865.5287359,
+    "seen": 1793164078.9496455,
+    "ast_hash": "d946469e5183a2d558b36e8087acfc5f",
     "semantic_hash": ""
   },
   "src/components/LightThemeSwitcher.tsx": {
     "mtime": 1793079645.2406354,
     "seen": 1793080089.4930677,
     "ast_hash": "118a3fb5e4cecc945b00fc0ec6252729",
+    "semantic_hash": ""
+  },
+  "scripts/remove_logo_backgrounds.py": {
+    "mtime": 1793163851.6163208,
+    "seen": 1793164078.9491236,
+    "ast_hash": "e2c9d99522411e83444755d7628ab9a1",
     "semantic_hash": ""
   }
 }
