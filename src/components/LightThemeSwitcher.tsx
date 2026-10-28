@@ -14,45 +14,45 @@ export interface ThemeOption {
 
 export const THEME_OPTIONS: ThemeOption[] = [
   {
-    id: "sapphire",
-    name: "Sapphire & Coral",
-    tagline: "Silicon Valley Tech Luxury",
-    primaryColor: "#1d4ed8",
-    accentColor: "#ea580c",
-    bgPreview: "from-blue-600 to-orange-500",
+    id: "cyber-obsidian",
+    name: "Cyber Obsidian",
+    tagline: "Electric Azure & Deep Void",
+    primaryColor: "#38bdf8",
+    accentColor: "#f43f5e",
+    bgPreview: "from-sky-500 to-rose-500",
   },
   {
-    id: "navy-gold",
-    name: "Executive Navy & Gold",
-    tagline: "Mayfair Corporate Prestige",
-    primaryColor: "#0f172a",
-    accentColor: "#d97706",
-    bgPreview: "from-slate-900 to-amber-500",
-  },
-  {
-    id: "emerald-indigo",
-    name: "Emerald Mint & Indigo",
-    tagline: "Future Ventures & Innovation",
-    primaryColor: "#4338ca",
-    accentColor: "#059669",
-    bgPreview: "from-indigo-600 to-emerald-500",
-  },
-  {
-    id: "amethyst-sunset",
-    name: "Amethyst & Sunset",
-    tagline: "Creative Agency Distinction",
-    primaryColor: "#6d28d9",
+    id: "hyperion-gold",
+    name: "Hyperion Gold",
+    tagline: "Solar Amber & Titanium Black",
+    primaryColor: "#fbbf24",
     accentColor: "#f97316",
-    bgPreview: "from-purple-600 to-orange-500",
+    bgPreview: "from-amber-400 to-orange-500",
+  },
+  {
+    id: "nebula-purple",
+    name: "Nebula Violet",
+    tagline: "Ultraviolet Space & Neon Pulse",
+    primaryColor: "#c084fc",
+    accentColor: "#f43f5e",
+    bgPreview: "from-purple-500 to-pink-500",
+  },
+  {
+    id: "aurora-matrix",
+    name: "Aurora Matrix",
+    tagline: "Bioluminescent Mint & Cyan",
+    primaryColor: "#34d399",
+    accentColor: "#38bdf8",
+    bgPreview: "from-emerald-400 to-cyan-500",
   },
 ];
 
 export default function LightThemeSwitcher() {
-  const [activeTheme, setActiveTheme] = useState<string>("sapphire");
+  const [activeTheme, setActiveTheme] = useState<string>("cyber-obsidian");
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("vaivas-light-theme") || "sapphire";
+    const saved = localStorage.getItem("vaivas-cyber-theme") || "cyber-obsidian";
     setActiveTheme(saved);
     document.documentElement.setAttribute("data-theme", saved);
   }, []);
@@ -60,48 +60,48 @@ export default function LightThemeSwitcher() {
   const handleSelectTheme = (themeId: string) => {
     setActiveTheme(themeId);
     document.documentElement.setAttribute("data-theme", themeId);
-    localStorage.setItem("vaivas-light-theme", themeId);
+    localStorage.setItem("vaivas-cyber-theme", themeId);
   };
 
   const currentOption = THEME_OPTIONS.find((t) => t.id === activeTheme) || THEME_OPTIONS[0];
 
   return (
     <>
-      {/* Floating Theme Selector Button (Desktop & Mobile) */}
+      {/* Floating Theme Selector Button */}
       <div className="fixed top-20 right-4 z-40">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Change light theme color combination"
-          className="group flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/95 backdrop-blur-xl border border-slate-200/90 shadow-[0_8px_25px_-5px_rgba(0,0,0,0.12)] hover:shadow-lg transition-all active:scale-95 text-xs font-bold text-slate-800"
+          aria-label="Change 3D Cyber Theme"
+          className="group flex items-center gap-2.5 px-4 py-2 rounded-full bg-slate-900/90 backdrop-blur-xl border border-white/15 shadow-[0_8px_30px_rgba(0,0,0,0.5)] hover:border-white/30 transition-all active:scale-95 text-xs font-bold text-slate-100"
         >
           <div className="flex items-center -space-x-1">
             <span
-              className="w-3.5 h-3.5 rounded-full border border-white shadow-2xs"
+              className="w-3.5 h-3.5 rounded-full border border-slate-900 shadow-sm"
               style={{ backgroundColor: currentOption.primaryColor }}
             />
             <span
-              className="w-3.5 h-3.5 rounded-full border border-white shadow-2xs"
+              className="w-3.5 h-3.5 rounded-full border border-slate-900 shadow-sm"
               style={{ backgroundColor: currentOption.accentColor }}
             />
           </div>
           <span className="hidden sm:inline font-semibold">{currentOption.name}</span>
           <span className="sm:hidden font-semibold">Theme</span>
-          <Palette className="w-3.5 h-3.5 text-slate-500 group-hover:rotate-45 transition-transform" />
+          <Palette className="w-3.5 h-3.5 text-slate-400 group-hover:rotate-45 transition-transform" />
         </button>
 
-        {/* Dropdown Card */}
+        {/* Dropdown Modal */}
         {isOpen && (
-          <div className="absolute right-0 top-12 w-72 sm:w-80 bg-white/98 backdrop-blur-2xl rounded-3xl border border-slate-200 shadow-2xl p-4 space-y-3 animate-in fade-in slide-in-from-top-3 duration-200">
-            <div className="flex items-center justify-between pb-2 border-b border-slate-100">
-              <div className="flex items-center gap-2 text-xs font-bold text-slate-900 uppercase tracking-wider">
-                <Sparkles className="w-4 h-4 text-orange-500" />
-                <span>Light Theme Colorways</span>
+          <div className="absolute right-0 top-12 w-72 sm:w-80 bg-slate-950/95 backdrop-blur-2xl rounded-3xl border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.8)] p-4 space-y-3 animate-in fade-in slide-in-from-top-3 duration-200">
+            <div className="flex items-center justify-between pb-2 border-b border-white/10">
+              <div className="flex items-center gap-2 text-xs font-bold text-slate-100 uppercase tracking-wider">
+                <Sparkles className="w-4 h-4 text-cyan-400" />
+                <span>3D Cyber Themes</span>
               </div>
-              <span className="text-[10px] font-medium text-slate-400">Live Preview</span>
+              <span className="text-[10px] font-medium text-slate-400">Live 3D WebGL</span>
             </div>
 
-            <p className="text-xs text-slate-500 leading-relaxed">
-              Tap any combination below to preview the entire website in that color scheme:
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Select an ambient lighting palette to re-color the 3D scene and interfaces in real time:
             </p>
 
             <div className="space-y-2">
@@ -115,35 +115,34 @@ export default function LightThemeSwitcher() {
                     }}
                     className={`w-full flex items-center justify-between p-3 rounded-2xl border text-left transition-all ${
                       isSelected
-                        ? "bg-slate-50/90 border-slate-400 shadow-xs"
-                        : "bg-white border-slate-200/80 hover:bg-slate-50/60"
+                        ? "bg-white/10 border-cyan-400/60 shadow-[0_0_15px_-2px_rgba(56,189,248,0.3)]"
+                        : "bg-slate-900/60 border-white/10 hover:bg-white/5"
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      {/* Dual Swatch */}
                       <div className="flex items-center -space-x-1.5 shrink-0">
                         <span
-                          className="w-5 h-5 rounded-full border-2 border-white shadow-xs"
+                          className="w-5 h-5 rounded-full border-2 border-slate-900 shadow-sm"
                           style={{ backgroundColor: theme.primaryColor }}
                         />
                         <span
-                          className="w-5 h-5 rounded-full border-2 border-white shadow-xs"
+                          className="w-5 h-5 rounded-full border-2 border-slate-900 shadow-sm"
                           style={{ backgroundColor: theme.accentColor }}
                         />
                       </div>
                       <div>
-                        <div className="text-xs font-bold text-slate-900 leading-tight">
+                        <div className="text-xs font-bold text-slate-100 leading-tight">
                           {theme.name}
                         </div>
-                        <div className="text-[11px] text-slate-500 font-normal">
+                        <div className="text-[11px] text-slate-400 font-normal">
                           {theme.tagline}
                         </div>
                       </div>
                     </div>
 
                     {isSelected && (
-                      <span className="w-5 h-5 rounded-full bg-slate-900 text-white flex items-center justify-center shrink-0">
-                        <Check className="w-3 h-3 stroke-[2.5]" />
+                      <span className="w-5 h-5 rounded-full bg-cyan-400 text-slate-950 flex items-center justify-center shrink-0">
+                        <Check className="w-3 h-3 stroke-[3]" />
                       </span>
                     )}
                   </button>
@@ -151,11 +150,11 @@ export default function LightThemeSwitcher() {
               })}
             </div>
 
-            <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400">
-              <span>All 4 options are Light Themes</span>
+            <div className="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] text-slate-400">
+              <span>Dynamic 3D Shaders Active</span>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-slate-600 hover:text-slate-900 font-bold"
+                className="text-slate-300 hover:text-white font-bold"
               >
                 Close
               </button>

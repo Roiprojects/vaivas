@@ -39,6 +39,8 @@ export const metadata: Metadata = {
 
 import MobileAppDock from "@/components/MobileAppDock";
 import LightThemeSwitcher from "@/components/LightThemeSwitcher";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import Scroll3DScene from "@/components/canvas/Scroll3DScene";
 
 export default function RootLayout({
   children,
@@ -46,10 +48,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full scroll-smooth" data-theme="sapphire">
-      <body className="min-h-full flex flex-col antialiased selection:bg-blue-600 selection:text-white">
+    <html lang="en" className="h-full scroll-smooth" data-theme="cyber-obsidian">
+      <body className="min-h-full flex flex-col antialiased selection:bg-cyan-500 selection:text-slate-950 bg-[#040714] text-slate-100 relative">
+        <ScrollProgressBar />
+        <Scroll3DScene />
         <LightThemeSwitcher />
-        <div className="flex-1 pb-20 lg:pb-0">{children}</div>
+        <div className="flex-1 pb-20 lg:pb-0 relative z-10">{children}</div>
         <MobileAppDock />
       </body>
     </html>

@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Briefcase, Megaphone, Users, PhoneCall, Sparkles } from "lucide-react";
+import { Home, Briefcase, Users, PhoneCall, Sparkles } from "lucide-react";
 
 export default function MobileAppDock() {
   const pathname = usePathname();
@@ -26,8 +26,7 @@ export default function MobileAppDock() {
       icon: Home,
       isActive: isHome,
       badge: null,
-      activeColor: "text-blue-600",
-      activeBg: "bg-blue-50 text-blue-600",
+      activeBg: "bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 shadow-[0_0_12px_rgba(56,189,248,0.4)]",
     },
     {
       label: "Jobs",
@@ -35,8 +34,7 @@ export default function MobileAppDock() {
       icon: Briefcase,
       isActive: isJobs,
       badge: "Hiring",
-      activeColor: "text-blue-600",
-      activeBg: "bg-blue-500 text-white shadow-md shadow-blue-500/30",
+      activeBg: "bg-sky-500 text-slate-950 font-bold shadow-[0_0_15px_rgba(14,165,233,0.5)]",
     },
     {
       label: "Ads",
@@ -44,8 +42,7 @@ export default function MobileAppDock() {
       icon: Sparkles,
       isActive: isAds,
       badge: "Studio",
-      activeColor: "text-orange-600",
-      activeBg: "bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md shadow-orange-500/30",
+      activeBg: "bg-gradient-to-r from-rose-500 to-amber-500 text-white font-bold shadow-[0_0_15px_rgba(244,63,94,0.5)]",
     },
     {
       label: "Talent",
@@ -53,8 +50,7 @@ export default function MobileAppDock() {
       icon: Users,
       isActive: isHR,
       badge: null,
-      activeColor: "text-emerald-600",
-      activeBg: "bg-emerald-500 text-white shadow-md shadow-emerald-500/30",
+      activeBg: "bg-emerald-500 text-slate-950 font-bold shadow-[0_0_15px_rgba(16,185,129,0.5)]",
     },
     {
       label: "Contact",
@@ -62,8 +58,7 @@ export default function MobileAppDock() {
       icon: PhoneCall,
       isActive: isContact,
       badge: null,
-      activeColor: "text-slate-900",
-      activeBg: "bg-slate-900 text-white shadow-md",
+      activeBg: "bg-white text-slate-950 font-bold shadow-md",
     },
   ];
 
@@ -71,7 +66,7 @@ export default function MobileAppDock() {
     <div className="lg:hidden fixed bottom-3 inset-x-0 z-50 flex justify-center px-3 pointer-events-none">
       <nav
         aria-label="Mobile app dock"
-        className="pointer-events-auto w-full max-w-md bg-white/90 backdrop-blur-2xl border border-slate-200/90 shadow-[0_12px_35px_-8px_rgba(15,23,42,0.18)] rounded-full px-2 py-1.5 flex items-center justify-between transition-all"
+        className="pointer-events-auto w-full max-w-md bg-slate-950/90 backdrop-blur-2xl border border-white/15 shadow-[0_15px_40px_rgba(0,0,0,0.8)] rounded-full px-2 py-1.5 flex items-center justify-between transition-all"
       >
         {navItems.map((item) => {
           const Icon = item.icon;
@@ -82,18 +77,18 @@ export default function MobileAppDock() {
               className={`relative flex flex-col items-center justify-center py-1.5 px-3 rounded-full transition-all duration-200 active:scale-90 ${
                 item.isActive
                   ? item.activeBg
-                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/60"
+                  : "text-slate-400 hover:text-white hover:bg-white/5"
               }`}
             >
               {item.badge && !item.isActive && (
-                <span className="absolute -top-1.5 right-1 px-1.5 py-0.2 rounded-full text-[9px] font-bold bg-orange-500 text-white animate-pulse">
+                <span className="absolute -top-1.5 right-1 px-1.5 py-0.2 rounded-full text-[9px] font-bold bg-cyan-500 text-slate-950 shadow-[0_0_8px_rgba(6,182,212,0.8)]">
                   {item.badge}
                 </span>
               )}
               <Icon className={`w-5 h-5 ${item.isActive ? "stroke-[2.3]" : "stroke-[1.8]"}`} />
               <span
                 className={`text-[10px] font-medium tracking-tight mt-0.5 ${
-                  item.isActive ? "font-bold" : "text-slate-600"
+                  item.isActive ? "font-bold" : "text-slate-400"
                 }`}
               >
                 {item.label}

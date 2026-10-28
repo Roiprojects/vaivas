@@ -12,9 +12,9 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1793076793.8583367,
-    "seen": 1793077137.842533,
-    "ast_hash": "41ae1b5971cce235d86eb50cf4019e43",
+    "mtime": 1793174672.8745878,
+    "seen": 1793175113.7223854,
+    "ast_hash": "39c0a3ca7c25c6ff7aa7ff5f9d378ed9",
     "semantic_hash": ""
   },
   "postcss.config.mjs": {
@@ -276,9 +276,9 @@
     "semantic_hash": ""
   },
   "src/app/layout.tsx": {
-    "mtime": 1793079698.9084158,
-    "seen": 1793080089.4930677,
-    "ast_hash": "7de5b62c689e364e7ad8cf9667cc59db",
+    "mtime": 1793174885.1000826,
+    "seen": 1793175113.7223854,
+    "ast_hash": "217f4344ac88622f56157d887ecf7553",
     "semantic_hash": ""
   },
   "src/app/mission-vision/page.tsx": {
@@ -294,9 +294,9 @@
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
-    "mtime": 1793082070.8449347,
-    "seen": 1793082171.257754,
-    "ast_hash": "535d31f89181e06c59b05cd28d4b6e09",
+    "mtime": 1793174954.4164793,
+    "seen": 1793175113.7223854,
+    "ast_hash": "2f480cc62b7708974b19fe7fbc092861",
     "semantic_hash": ""
   },
   "src/app/privacy/page.tsx": {
@@ -342,9 +342,9 @@
     "semantic_hash": ""
   },
   "src/components/Footer.tsx": {
-    "mtime": 1793078326.8410304,
-    "seen": 1793078705.0042899,
-    "ast_hash": "1114a4ec8f408c11b2cb799d69695341",
+    "mtime": 1793174918.64019,
+    "seen": 1793175113.7223854,
+    "ast_hash": "659fcfa4fcf5a951fc2ef3da789e4137",
     "semantic_hash": ""
   },
   "src/components/GalleryViewer.tsx": {
@@ -354,9 +354,9 @@
     "semantic_hash": ""
   },
   "src/components/Header.tsx": {
-    "mtime": 1793080857.1941934,
-    "seen": 1793081000.7416263,
-    "ast_hash": "fbf5b952f58ba5c5bbabae98f0a37b31",
+    "mtime": 1793174907.2382824,
+    "seen": 1793175113.7223854,
+    "ast_hash": "5b99107292b3a56cd84ed4897c84c9bf",
     "semantic_hash": ""
   },
   "src/components/JobApplyForm.tsx": {
@@ -378,9 +378,9 @@
     "semantic_hash": ""
   },
   "src/components/TestimonialCarousel.tsx": {
-    "mtime": 1792992969.9596522,
-    "seen": 1793013352.7547164,
-    "ast_hash": "1bfbfdc2a116ef2aabdef47aad1bc36d",
+    "mtime": 1793174980.4162924,
+    "seen": 1793175113.7223854,
+    "ast_hash": "7c00f286d50e91720653a8d92642251b",
     "semantic_hash": ""
   },
   "src/components/admin/AdminActivityLogsViewer.tsx": {
@@ -960,9 +960,9 @@
     "semantic_hash": ""
   },
   "src/components/MobileAppDock.tsx": {
-    "mtime": 1793077571.290646,
-    "seen": 1793077889.7705371,
-    "ast_hash": "c724dcdf4b58c3739c572150e275463b",
+    "mtime": 1793174991.2893984,
+    "seen": 1793175113.7223854,
+    "ast_hash": "37b4710aa14ac70ebe494877a4a6f9d4",
     "semantic_hash": ""
   },
   "public/images/logos/vaivas-ads-logo-tight.png": {
@@ -984,15 +984,45 @@
     "semantic_hash": ""
   },
   "src/components/LightThemeSwitcher.tsx": {
-    "mtime": 1793079645.2406354,
-    "seen": 1793080089.4930677,
-    "ast_hash": "118a3fb5e4cecc945b00fc0ec6252729",
+    "mtime": 1793174873.2377398,
+    "seen": 1793175113.7223854,
+    "ast_hash": "8b5b6163811fa42ad942117edb2b279c",
     "semantic_hash": ""
   },
   "scripts/remove_logo_backgrounds.py": {
     "mtime": 1793163851.6163208,
     "seen": 1793164078.9491236,
     "ast_hash": "e2c9d99522411e83444755d7628ab9a1",
+    "semantic_hash": ""
+  },
+  "src/components/3d/ScrollReveal.tsx": {
+    "mtime": 1793174842.6719844,
+    "seen": 1793175113.7223854,
+    "ast_hash": "c27cea1acaf669c803e3f7a93b997516",
+    "semantic_hash": ""
+  },
+  "src/components/3d/TiltCard.tsx": {
+    "mtime": 1793174838.4865525,
+    "seen": 1793175113.7223854,
+    "ast_hash": "99f5c594741b5699fd776d553c44db25",
+    "semantic_hash": ""
+  },
+  "src/components/ScrollProgressBar.tsx": {
+    "mtime": 1793174846.663255,
+    "seen": 1793175113.7223854,
+    "ast_hash": "a1fe40f10ddbf302ca2540c577fad685",
+    "semantic_hash": ""
+  },
+  "src/components/canvas/Hero3DCanvas.tsx": {
+    "mtime": 1793174790.997435,
+    "seen": 1793175113.7223854,
+    "ast_hash": "5fad354a52cdc3e74d94e637eb7df7a8",
+    "semantic_hash": ""
+  },
+  "src/components/canvas/Scroll3DScene.tsx": {
+    "mtime": 1793174830.0603547,
+    "seen": 1793175113.7223854,
+    "ast_hash": "1eb4b9b1cac3382fedb378d46c7a03c5",
     "semantic_hash": ""
   }
 }
